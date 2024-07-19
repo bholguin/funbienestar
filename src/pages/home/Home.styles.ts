@@ -19,7 +19,7 @@ export namespace Styled {
         position: 'absolute',
         backgroundColor: 'rgba(38, 42, 49, .9)',
         zIndex: '50',
-        bottom: '75%',
+        top: '5%',
         padding: '1rem',
         right: '15%',
         left: '15%',
@@ -79,14 +79,14 @@ export namespace Styled {
         }
     }))
 
-    export const SectionBoxOptions = styled(Box)(({ }) => ({
+    export const SectionBoxOptions = styled(Box)(() => ({
         backgroundColor: '#FFFFFF',
         width: '350px',
         height: '350px',
         border: '2px solid #262A31'
     }))
 
-    export const AliadosBox = styled(Box)(({ }) => ({
+    export const AliadosBox = styled(Box)(() => ({
         "@keyframes slide": {
             '0%': {
                 transform: "translateX(0)"
@@ -97,5 +97,11 @@ export namespace Styled {
         },
         display: 'inline-block',
         animation: '15s slide infinite linear',
+    }))
+
+    export const BoxPhotos = styled(Box)(() => ({
+        display: 'flex',
+        width: '100%',
+        justifyContent: 'center'
     }))
 }

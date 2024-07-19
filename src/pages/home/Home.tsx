@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from "@mui/material"
+import { Box, ImageList, ImageListItem, Typography } from "@mui/material"
 import Carousel from 'react-material-ui-carousel'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -7,12 +7,12 @@ import { useHome } from "./Home.hook";
 
 
 export const Home = () => {
-    const { options, aliados } = useHome()
+    const { options, aliados, itemData, srcset } = useHome()
     return <Box sx={{ width: '100%' }}>
         <Styled.CorouselContent>
             <Styled.WelcomeBox>
                 <Typography variant="h3" color={'white'}>Bienvenidos a:</Typography>
-                <Typography variant="h1" color={'white'}>FUNBIENESTAR</Typography>
+                <Typography variant="h1" color={'white'} padding={0}>FUNBIENESTAR</Typography>
                 <Typography variant="h5" color={'white'}>FUNDACION NACIONAL DE BIENESTAR SOCIAL</Typography>
                 <Styled.ExpandCircleDownIconStyled />
             </Styled.WelcomeBox>
@@ -35,31 +35,31 @@ export const Home = () => {
             <Styled.NextContent>
                 <Typography variant="h1">Misión</Typography>
                 <Typography variant="body1">
-                    Somos una institución sun ánimo de lucro que promueve la protección en necesidades básicas de salud, nutrición y recreación de la primera infancia,
+                    Somos una institución sin ánimo de lucro que promueve la protección en necesidades básicas de salud, nutrición y recreación de la primera infancia,
                     adultos mayores y personas en situación de discapacidad; así como también fomentamos programas y proyectos de inclusión social, educativa y económica.
                 </Typography>
             </Styled.NextContent>
             <Styled.NextContent>
                 <Typography variant="h1">Visión</Typography>
                 <Typography variant="body1">
-                    Ser una institución líder que promueva el trabajo digno por medio de la educación y la mejora en la calidad de vidade las personas beneficiarias, para así contribuir
+                    Ser una institución líder que promueva el trabajo digno por medio de la educación y la mejora en la calidad de vida de las personas beneficiarias, para así contribuir
                     al desarrollo de nuestra patria colombiana de forma exitosa con profesionales que presten sus servicios con amor, pasión y honestidad.
                 </Typography>
             </Styled.NextContent>
         </Styled.ContentMisionVision>
         <Styled.SectionBox>
             <Styled.SectionBoxOptions>
-                <img src="http://localhost:3000/assets/donate_icon.png" style={{
+                <img src="/assets/donate_icon.png" style={{
                     width: '100px'
                 }} alt="" />
             </Styled.SectionBoxOptions>
             <Styled.SectionBoxOptions>
-                <img src="http://localhost:3000/assets/heart_icon.png" style={{
+                <img src="/assets/heart_icon.png" style={{
                     width: '100px'
                 }} alt="" />
             </Styled.SectionBoxOptions>
             <Styled.SectionBoxOptions>
-                <img src="http://localhost:3000/assets/spade_icon.png" style={{
+                <img src="/assets/spade_icon.png" style={{
                     width: '100px'
                 }} alt="" />
             </Styled.SectionBoxOptions>
@@ -68,13 +68,13 @@ export const Home = () => {
 
         <Box sx={{
             overflow: 'hidden',
-            padding: '1rem',
+            padding: '2rem',
             display: 'inline-block',
             whiteSpace: 'nowrap',
             backgroundColor: 'white',
-            width: {md: '50%', xs: '90%'}
+            width: { md: '50%', xs: '90%' }
         }}>
-            <Typography variant="h1">Aliados</Typography>
+            <Typography variant="h2" padding={1}>Aliados</Typography>
             <Styled.AliadosBox>
                 {aliados.map(item => (
                     <img style={{
@@ -82,14 +82,33 @@ export const Home = () => {
                     }} height={'100px'} src={item.url} alt={item.url} />
                 ))}
             </Styled.AliadosBox>
-         <Styled.AliadosBox>
-            {aliados.map(item => (
+            <Styled.AliadosBox>
+                {aliados.map(item => (
                     <img style={{
                         marginRight: '40px'
                     }} height={'100px'} src={item.url} alt={item.url} />
                 ))}
-            </Styled.AliadosBox> 
+            </Styled.AliadosBox>
         </Box>
+        <Styled.BoxPhotos>
+            <ImageList
+                sx={{ width: '40%' }}
+                variant="quilted"
+                cols={6}
+                rowHeight={121}
+            >
+                {itemData.map((item) => (
+                    <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                        <img
+                            {...srcset(item.img, 121, item.rows, item.cols)}
+                            alt={item.title}
+                            loading="lazy"
+                        />
+                    </ImageListItem>
+                ))}
+            </ImageList>
+        </Styled.BoxPhotos>
+
 
     </Box>
 }

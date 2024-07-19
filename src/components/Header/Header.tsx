@@ -80,7 +80,7 @@ export const Header = (props: Props) => {
                         alignItems: 'center',
                     }}>
                         <Styled.ImageStyled
-                            src="http://localhost:3000/assets/logo_funbienestar.png" alt="logo"
+                            src="/assets/logo_funbienestar.png" alt="logo"
                         />
                     </Box>
 
