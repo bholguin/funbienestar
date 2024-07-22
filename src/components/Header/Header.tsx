@@ -26,7 +26,7 @@ const navItems = [
     { label: 'Home', to: '/' },
     { label: 'Nosotros', to: '/nosotros' },
     { label: 'Programas', to: '/nuestros-programas' },
-    { label: 'Donaciones', to: '' },
+    { label: 'Donaciones', to: '/donaciones' },
 ];
 
 export const Header = (props: Props) => {

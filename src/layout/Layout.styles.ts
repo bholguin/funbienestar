@@ -8,7 +8,6 @@ export namespace Styled {
         flexDirection: 'column',
         alignItems: 'center',
         minHeight: '85vh',
-        justifyContent: 'center',
         [theme.breakpoints.up('sm')]: {
             paddingTop: '10.6rem',
         }

@@ -1,10 +1,15 @@
 import { Box, List, ListItem, ListItemText, styled, Typography } from "@mui/material"
+import { useEffect } from "react"
 
 const ListItemStyled = styled(ListItem)({
      display: 'flex', flexDirection: 'column', justifyContent: 'start', alignItems: 'flex-start'
 })
 
 export const NuestrosProgramas = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     return (
         <Box sx={{
             width: { xs: '90%', lg: '60%' },

@@ -122,7 +122,5 @@ export const Home = () => {
                 ))}
             </Styled.ImageListStyled>
         </Styled.BoxPhotos>
-
-
     </Box>
 }
