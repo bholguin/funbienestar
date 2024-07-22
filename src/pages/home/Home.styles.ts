@@ -5,7 +5,10 @@ export namespace Styled {
     export const ImageStyled = styled('img')(({ theme }) => ({
         display: 'flex',
         width: '100%',
-        height: '50vh',
+        height: '30vh',
+        [theme.breakpoints.up('sm')]: {
+            height: '50vh'
+        },
         [theme.breakpoints.up('md')]: {
             height: '100vh'
         }
