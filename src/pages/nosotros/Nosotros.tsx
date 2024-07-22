@@ -12,11 +12,12 @@ const ImageStyled = styled('img')(({ theme }) => ({
 
 export const Nosotros = () => {
     return <Box sx={{
-        width: { sm: '90%', lg: '60%' },
+        width: { xs: '90%', lg: '60%' },
         display: 'flex',
         flexDirection: 'column',
         gap: '1rem',
-        paddingTop: '3rem'
+        paddingTop: '3rem',
+        paddingBottom: '1rem'
     }}>
         <Typography variant="h1" padding={0}>Nosotros</Typography>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', lg: 'row' }, gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>

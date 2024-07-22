@@ -11,7 +11,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import { Styled } from './Header.styles';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface Props {
     /**
@@ -26,13 +26,14 @@ const navItems = [
     { label: 'Home', to: '/' },
     { label: 'Nosotros', to: '/nosotros' },
     { label: 'Programas', to: '/nuestros-programas' },
-    { label: 'Donaciones', to: '/nosotros' },
-    { label: 'Contacto', to: '/nosotros' }
+    { label: 'Donaciones', to: '' },
 ];
 
 export const Header = (props: Props) => {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const navigate = useNavigate()
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -46,11 +47,13 @@ export const Header = (props: Props) => {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item.label} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'start' }}>
-                            <ListItemText primary={item.label} />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link key={item.label} to={item.to}>
+                        <ListItem  disablePadding>
+                            <ListItemButton sx={{ textAlign: 'start' }}>
+                                <ListItemText primary={item.label} />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 ))}
             </List>
         </Box>
@@ -71,15 +74,18 @@ export const Header = (props: Props) => {
                     >
                         <MenuIcon fontSize='large' />
                     </IconButton>
-                    <Box sx={{
-                        display: 'flex',
-                        padding: '.1rem',
-                        background: 'rgba(255, 255, 255, 0.5)',
-                        width:{ xs:'120px',  sm:'150px'},
-                        borderRadius: '50%',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
+                    <Box
+                        onClick={() => navigate('/')}
+                        sx={{
+                            display: 'flex',
+                            padding: '.1rem',
+                            background: 'rgba(255, 255, 255, 0.5)',
+                            width: { xs: '120px', sm: '150px' },
+                            borderRadius: '50%',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            cursor: 'pointer'
+                        }}>
                         <Styled.ImageStyled
                             src="/assets/logo_funbienestar.png" alt="logo"
                         />
