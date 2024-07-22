@@ -80,7 +80,7 @@ export const Header = (props: Props) => {
                             display: 'flex',
                             padding: '.1rem',
                             background: 'rgba(255, 255, 255, 0.5)',
-                            width: { xs: '120px', sm: '150px' },
+                            width: { xs: '80px', md: '120px' },
                             borderRadius: '50%',
                             justifyContent: 'center',
                             alignItems: 'center',

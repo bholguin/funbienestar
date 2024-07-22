@@ -1,4 +1,4 @@
-import { Box, List, ListItem, ListItemText, styled, Typography } from "@mui/material"
+import { Box, List, ListItem, styled, Typography } from "@mui/material"
 import { useEffect } from "react"
 
 const ListItemStyled = styled(ListItem)({

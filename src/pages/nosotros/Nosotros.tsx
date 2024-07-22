@@ -1,15 +1,5 @@
-import { Box, List, ListItem, ListItemText, Typography, styled } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { useEffect } from "react"
-
-const ImageStyled = styled('img')(({ theme }) => ({
-    width: '350px',
-    height: '400px',
-    borderRadius: '10%',
-    boxShadow: '10px 15px 59px -8px rgba(0,0,0,0.74)',
-    [theme.breakpoints.up('lg')]: {
-        width: '700px'
-    }
-}))
 
 export const Nosotros = () => {
     useEffect(() => {

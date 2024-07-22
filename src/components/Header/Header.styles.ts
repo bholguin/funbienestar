@@ -6,8 +6,8 @@ export namespace Styled {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingLeft: '3rem !important',
-        paddingRight: '3rem !important',
+        paddingLeft: '2rem !important',
+        paddingRight: '2rem !important',
         paddingTop: '1rem',
         paddingBottom: '1rem',
         [theme.breakpoints.up('md')]: {
@@ -23,9 +23,9 @@ export namespace Styled {
     }))
 
     export const ImageStyled = styled('img')(({theme}) => ({
-        width: '80px',
-        [theme.breakpoints.up('sm')]: {
-            width: '100px'
+        width: '50px',
+        [theme.breakpoints.up('md')]: {
+            width: '80px'
         }
     }))
 }
