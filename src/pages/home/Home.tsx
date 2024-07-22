@@ -1,4 +1,4 @@
-import { Box, ImageList, ImageListItem, Typography } from "@mui/material"
+import { Box, ImageListItem, Typography } from "@mui/material"
 import Carousel from 'react-material-ui-carousel'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -7,7 +7,7 @@ import { useHome } from "./Home.hook";
 
 
 export const Home = () => {
-    const { options, aliados, itemData, srcset } = useHome()
+    const { options, aliados, itemData } = useHome()
     return <Box sx={{ width: '100%' }}>
         <Styled.CorouselContent>
             <Styled.WelcomeBox>
@@ -26,8 +26,8 @@ export const Home = () => {
                 NextIcon={<ArrowForwardIosIcon />}          // Change the "inside" of the next button to "next"
                 PrevIcon={<ArrowBackIosNewIcon />}
             >
-                {options.map(item => (
-                    <Styled.ImageStyled src={item.url} alt={item.url} />
+                {options.map((item, index) => (
+                    <Styled.ImageStyled key={"carousel" + index} src={item.url} alt={item.url} loading="lazy" />
                 ))}
             </Carousel>
         </Styled.CorouselContent>
@@ -76,37 +76,51 @@ export const Home = () => {
         }}>
             <Typography variant="h2" padding={1}>Aliados</Typography>
             <Styled.AliadosBox>
-                {aliados.map(item => (
-                    <img style={{
-                        marginRight: '40px'
-                    }} height={'100px'} src={item.url} alt={item.url} />
+                {aliados.map((item, index) => (
+                    <img
+                        key={'carousel-2-' + index}
+                        style={{
+                            marginRight: '40px'
+                        }}
+                        height={'100px'}
+                        src={item.url}
+                        alt={item.url}
+                        loading="lazy"
+                    />
                 ))}
             </Styled.AliadosBox>
             <Styled.AliadosBox>
-                {aliados.map(item => (
-                    <img style={{
-                        marginRight: '40px'
-                    }} height={'100px'} src={item.url} alt={item.url} />
+                {aliados.map((item, index) => (
+                    <img
+                        key={'carousel-1-' + index}
+                        style={{
+                            marginRight: '40px'
+                        }}
+                        height={'100px'}
+                        src={item.url}
+                        alt={item.url}
+                        loading="lazy"
+                    />
                 ))}
             </Styled.AliadosBox>
         </Box>
         <Styled.BoxPhotos>
-            <ImageList
-                sx={{ width: '40%' }}
+            <Styled.ImageListStyled
                 variant="quilted"
-                cols={6}
-                rowHeight={121}
+                rowHeight={280}
             >
-                {itemData.map((item) => (
-                    <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                {itemData.map((item, index) => (
+                    <ImageListItem key={item.img}>
                         <img
-                            {...srcset(item.img, 121, item.rows, item.cols)}
+                            key={index}
+                            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                             alt={item.title}
                             loading="lazy"
                         />
                     </ImageListItem>
                 ))}
-            </ImageList>
+            </Styled.ImageListStyled>
         </Styled.BoxPhotos>
 
 

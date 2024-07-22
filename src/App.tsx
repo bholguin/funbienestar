@@ -5,6 +5,7 @@ import { Layout } from './layout';
 import { Nosotros } from './pages/nosotros';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import {theme} from './theme'
+import { NuestrosProgramas } from './pages/nuestros-programas';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/' element={<Layout />}>
               <Route index element={<Home />} />
               <Route path='/nosotros' element={<Nosotros />} />
+              <Route path='/nuestros-programas' element={<NuestrosProgramas />} />
             </Route>
           </Routes>
         </Router>

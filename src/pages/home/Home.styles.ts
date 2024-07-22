@@ -1,4 +1,4 @@
-import { Box, styled } from "@mui/material";
+import { Box, styled, ImageList } from "@mui/material";
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 
 export namespace Styled {
@@ -103,5 +103,19 @@ export namespace Styled {
         display: 'flex',
         width: '100%',
         justifyContent: 'center'
+    }))
+
+    export const ImageListStyled = styled(ImageList)(({theme}) => ({
+        display: 'grid',
+        width: '100%',
+        gridTemplateColumns: 'repeat(2, 1fr) !important',
+        [theme.breakpoints.up('md')]: {
+            width: '80%',
+            gridTemplateColumns: 'repeat(3, 1fr) !important',
+        },
+        [theme.breakpoints.up('lg')]: {
+            width: '60%',
+            gridTemplateColumns: 'repeat(4, 1fr) !important',
+        }
     }))
 }

@@ -1,6 +1,6 @@
-import { Box, Typography, styled } from "@mui/material"
+import { Box, List, ListItem, ListItemText, Typography, styled } from "@mui/material"
 
-const ImageStyled = styled('img')(({theme}) => ({
+const ImageStyled = styled('img')(({ theme }) => ({
     width: '350px',
     height: '400px',
     borderRadius: '10%',
@@ -12,19 +12,20 @@ const ImageStyled = styled('img')(({theme}) => ({
 
 export const Nosotros = () => {
     return <Box sx={{
-        width:{ sm: '90%',  lg:'60%'},
+        width: { sm: '90%', lg: '60%' },
         display: 'flex',
         flexDirection: 'column',
-        gap: '3rem',
+        gap: '1rem',
         paddingTop: '3rem'
     }}>
+        <Typography variant="h1" padding={0}>Nosotros</Typography>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', lg: 'row' }, gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
             <ImageStyled
                 src="/assets/nosotros-img.jpeg"
                 alt="nosotros-img"
             />
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <Typography variant="h4">Nosotros</Typography>
+
                 <Typography align="justify" >
                     La <b>FUNDACION NACIONAL DE BIENESTAR SOCIAL</b> es una entidad autónoma de servicio social, de
                     carácter privado y sin ánimo de lucro con personería jurídica reconocida, comprometida con el
@@ -39,8 +40,9 @@ export const Nosotros = () => {
                     heridos, con discapacidad adquirida, sus familias y las familias de los fallecidos en cumplimiento
                     de su deber.
                 </Typography>
+
+
             </Box>
         </Box>
-   
     </Box>
 }
