@@ -47,7 +47,7 @@ export const Nosotros = () => {
             paddingTop: '2rem',
             position: 'relative',
             justifyContent: 'center',
-            minHeight: '60vh',
+            minHeight: '70vh',
             "::before": {
                 content: '" "',
                 position: 'absolute',

@@ -23,7 +23,7 @@ export const Home = () => {
                 duration={2500}
                 indicators={false}
                 stopAutoPlayOnHover={false}
-                NextIcon={<ArrowForwardIosIcon />}          // Change the "inside" of the next button to "next"
+                NextIcon={<ArrowForwardIosIcon />}  
                 PrevIcon={<ArrowBackIosNewIcon />}
             >
                 {options.map((item, index) => (
