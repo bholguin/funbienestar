@@ -33,22 +33,28 @@ export const Home = () => {
         </Styled.CorouselContent>
         <Styled.ContentMisionVision>
             <Styled.NextContent>
-                <Typography variant="h1">Misión</Typography>
-                <Typography variant="body1">
-                    Somos una institución sin ánimo de lucro que promueve la protección en necesidades básicas de salud, nutrición y recreación de la primera infancia,
-                    adultos mayores y personas en situación de discapacidad; así como también fomentamos programas y proyectos de inclusión social, educativa y económica.
+                <Typography align="justify" position={'relative'}>
+                    La <b>FUNDACION NACIONAL DE BIENESTAR SOCIAL</b> es una entidad autónoma de servicio social, de
+                    carácter privado y sin ánimo de lucro con personería jurídica reconocida, comprometida con el
+                    bienestar social de nuestro país.
                 </Typography>
-            </Styled.NextContent>
-            <Styled.NextContent>
-                <Typography variant="h1">Visión</Typography>
-                <Typography variant="body1">
-                    Ser una institución líder que promueva el trabajo digno por medio de la educación y la mejora en la calidad de vida de las personas beneficiarias, para así contribuir
-                    al desarrollo de nuestra patria colombiana de forma exitosa con profesionales que presten sus servicios con amor, pasión y honestidad.
+                <Typography align="justify" position={'relative'}>
+                    su objetivo contribuir al desarrollo comunitario y social mediante la concepción, promoción y
+                    ejecución de planes y programas directos proyectando obras sociales.
+                </Typography>
+                <Typography align="justify" position={'relative'}>
+                    Desde hace años trabajamos con hombres y mujeres de las Fuerzas Militares y de Policía e inpec
+                    heridos, con discapacidad adquirida, sus familias y las familias de los fallecidos en cumplimiento
+                    de su deber.
                 </Typography>
             </Styled.NextContent>
         </Styled.ContentMisionVision>
         <Styled.SectionBox>
-            <Styled.SectionBoxOptions>
+            <video controls>
+                <source src="/assets/video.mp4" type="video/mp4" />
+            </video>
+
+            {/* <Styled.SectionBoxOptions>
                 <img src="/assets/donate_icon.png" style={{
                     width: '100px'
                 }} alt="" />
@@ -62,10 +68,8 @@ export const Home = () => {
                 <img src="/assets/spade_icon.png" style={{
                     width: '100px'
                 }} alt="" />
-            </Styled.SectionBoxOptions>
+            </Styled.SectionBoxOptions> */}
         </Styled.SectionBox>
-
-
         <Box sx={{
             overflow: 'hidden',
             padding: '2rem',

@@ -47,7 +47,7 @@ export const Nosotros = () => {
             paddingTop: '2rem',
             position: 'relative',
             justifyContent: 'center',
-            minHeight:'60vh',
+            minHeight: '60vh',
             "::before": {
                 content: '" "',
                 position: 'absolute',
@@ -55,9 +55,9 @@ export const Nosotros = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: "50% 35%",
                 backgroundSize: 'cover',
-                width:{lg: '70%'},
+                width: { lg: '70%' },
                 margin: '0 auto',
-                top: { xs: '370px', sm: '200px', md:'120px', lg:'180px'},
+                top: { xs: '370px', sm: '200px', md: '120px', lg: '180px' },
                 right: '0px',
                 bottom: '0px',
                 left: '0px',
@@ -70,22 +70,19 @@ export const Nosotros = () => {
                 gap: '1rem',
                 position: 'absolute',
                 padding: '.5rem',
-                backgroundColor: 'rgba(255,255,255,0.6)',
+                backgroundColor: 'rgba(255,255,255,0.7)',
                 borderRadius: '10px'
             }}>
-                <Typography align="justify" position={'relative'}>
-                    La <b>FUNDACION NACIONAL DE BIENESTAR SOCIAL</b> es una entidad autónoma de servicio social, de
-                    carácter privado y sin ánimo de lucro con personería jurídica reconocida, comprometida con el
-                    bienestar social de nuestro país.
+                <Typography variant="h1">Misión</Typography>
+                <Typography variant="body1">
+                    Somos una institución sin ánimo de lucro que promueve la protección en necesidades básicas de salud, nutrición y recreación de la primera infancia,
+                    adultos mayores y personas en situación de discapacidad; así como también fomentamos programas y proyectos de inclusión social, educativa y económica.
                 </Typography>
-                <Typography align="justify" position={'relative'}>
-                    su objetivo contribuir al desarrollo comunitario y social mediante la concepción, promoción y
-                    ejecución de planes y programas directos proyectando obras sociales.
-                </Typography>
-                <Typography align="justify" position={'relative'}>
-                    Desde hace años trabajamos con hombres y mujeres de las Fuerzas Militares y de Policía e inpec
-                    heridos, con discapacidad adquirida, sus familias y las familias de los fallecidos en cumplimiento
-                    de su deber.
+
+                <Typography variant="h1">Visión</Typography>
+                <Typography variant="body1">
+                    Ser una institución líder que promueva el trabajo digno por medio de la educación y la mejora en la calidad de vida de las personas beneficiarias, para así contribuir
+                    al desarrollo de nuestra patria colombiana de forma exitosa con profesionales que presten sus servicios con amor, pasión y honestidad.
                 </Typography>
             </Box>
 

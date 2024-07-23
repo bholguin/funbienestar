@@ -60,11 +60,14 @@ export namespace Styled {
     export const NextContent = styled(Box)(({ theme }) => ({
         width: '100%',
         padding: '1rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
         [theme.breakpoints.up('md')]: {
-            width: '45%',
+            width: '70%',
         },
         [theme.breakpoints.up('lg')]: {
-            width: '35%',
+            width: '40%',
         }
     }))
 
