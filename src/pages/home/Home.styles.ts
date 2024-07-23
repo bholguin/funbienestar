@@ -51,7 +51,6 @@ export namespace Styled {
         alignItems: 'center',
         flexDirection: 'column',
         paddingTop: '2rem',
-        paddingBottom: '2rem',
         gap: '0rem',
         [theme.breakpoints.up('lg')]: {
             gap: '1rem',

@@ -23,7 +23,7 @@ export const Home = () => {
                 duration={2500}
                 indicators={false}
                 stopAutoPlayOnHover={false}
-                NextIcon={<ArrowForwardIosIcon />}  
+                NextIcon={<ArrowForwardIosIcon />}
                 PrevIcon={<ArrowBackIosNewIcon />}
             >
                 {options.map((item, index) => (
@@ -49,12 +49,22 @@ export const Home = () => {
                 </Typography>
             </Styled.NextContent>
         </Styled.ContentMisionVision>
-        <Styled.SectionBox>
-            <video controls>
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                paddingTop: '.5rem',
+                paddingBottom: '.5rem',
+                width: '100%'
+            }}
+        >
+            <video style={{width: '400px'}} controls autoPlay playsInline>
                 <source src="/assets/video.mp4" type="video/mp4" />
             </video>
-
-            {/* <Styled.SectionBoxOptions>
+        </Box>
+        <Styled.SectionBox>
+            <Styled.SectionBoxOptions>
                 <img src="/assets/donate_icon.png" style={{
                     width: '100px'
                 }} alt="" />
@@ -68,7 +78,7 @@ export const Home = () => {
                 <img src="/assets/spade_icon.png" style={{
                     width: '100px'
                 }} alt="" />
-            </Styled.SectionBoxOptions> */}
+            </Styled.SectionBoxOptions>
         </Styled.SectionBox>
         <Box sx={{
             overflow: 'hidden',
