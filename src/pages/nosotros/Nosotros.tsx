@@ -42,29 +42,56 @@ export const Nosotros = () => {
             </Typography>
         </Box>
         <Box sx={{
-            width: { xs: '90%', lg: '60%' },
+            width: "100%",
             display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-            paddingTop: '3rem',
-            paddingBottom: '3rem',
-            position: 'relative'
+            paddingTop: '2rem',
+            position: 'relative',
+            justifyContent: 'center',
+            minHeight:'60vh',
+            "::before": {
+                content: '" "',
+                position: 'absolute',
+                backgroundImage: 'url(/assets/discapacitados.png)',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: "50% 35%",
+                backgroundSize: 'cover',
+                width:{lg: '70%'},
+                margin: '0 auto',
+                top: { xs: '370px', sm: '200px', md:'120px', lg:'180px'},
+                right: '0px',
+                bottom: '0px',
+                left: '0px',
+            }
         }}>
+            <Box sx={{
+                width: { xs: '90%', lg: '60%' },
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                position: 'absolute',
+                padding: '.5rem',
+                backgroundColor: 'rgba(255,255,255,0.6)',
+                borderRadius: '10px'
+            }}>
+                <Typography align="justify" position={'relative'}>
+                    La <b>FUNDACION NACIONAL DE BIENESTAR SOCIAL</b> es una entidad autónoma de servicio social, de
+                    carácter privado y sin ánimo de lucro con personería jurídica reconocida, comprometida con el
+                    bienestar social de nuestro país.
+                </Typography>
+                <Typography align="justify" position={'relative'}>
+                    su objetivo contribuir al desarrollo comunitario y social mediante la concepción, promoción y
+                    ejecución de planes y programas directos proyectando obras sociales.
+                </Typography>
+                <Typography align="justify" position={'relative'}>
+                    Desde hace años trabajamos con hombres y mujeres de las Fuerzas Militares y de Policía e inpec
+                    heridos, con discapacidad adquirida, sus familias y las familias de los fallecidos en cumplimiento
+                    de su deber.
+                </Typography>
+            </Box>
 
-            <Typography align="justify">
-                La <b>FUNDACION NACIONAL DE BIENESTAR SOCIAL</b> es una entidad autónoma de servicio social, de
-                carácter privado y sin ánimo de lucro con personería jurídica reconocida, comprometida con el
-                bienestar social de nuestro país.
-            </Typography>
-            <Typography align="justify">
-                su objetivo contribuir al desarrollo comunitario y social mediante la concepción, promoción y
-                ejecución de planes y programas directos proyectando obras sociales.
-            </Typography>
-            <Typography align="justify">
-                Desde hace años trabajamos con hombres y mujeres de las Fuerzas Militares y de Policía e inpec
-                heridos, con discapacidad adquirida, sus familias y las familias de los fallecidos en cumplimiento
-                de su deber.
-            </Typography>
+        </Box>
+        <Box>
+
         </Box>
     </>
 
