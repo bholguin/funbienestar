@@ -15,8 +15,8 @@ export const NuestrosProgramas = () => {
             gridTemplateColumns: { xs: '1fr', sm:'50% 50%'},
             flexDirection: 'column',
             gap:{ xs:'1rem',   md:'2.5rem'},
-            paddingTop: '5rem',
-            paddingBottom: '1rem',
+            paddingTop: {xs:'3rem', md:'5rem'},
+            paddingBottom: {xs:'1.5rem', md:'3rem'},
 
         }}>
 
