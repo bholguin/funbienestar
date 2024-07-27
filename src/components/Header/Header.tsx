@@ -11,7 +11,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import { Styled } from './Header.styles';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 interface Props {
     /**
@@ -35,9 +35,15 @@ export const Header = (props: Props) => {
 
     const navigate = useNavigate()
 
+    const location = useLocation()
+
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
+
+    React.useEffect(() => {
+
+    }, [location])
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -47,13 +53,16 @@ export const Header = (props: Props) => {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <Link key={item.label} to={item.to}>
-                        <ListItem  disablePadding>
+                    <Styled.LinkMobileStyled active={location.pathname === item.to} key={item.label} to={item.to}>
+                        <ListItem disablePadding>
                             <ListItemButton sx={{ textAlign: 'start' }}>
-                                <ListItemText primary={item.label} />
+                                <Styled.ListItemTextStyled
+                                    active={location.pathname === item.to}
+                                    primary={item.label}
+                                />
                             </ListItemButton>
                         </ListItem>
-                    </Link>
+                    </Styled.LinkMobileStyled>
                 ))}
             </List>
         </Box>
@@ -91,11 +100,11 @@ export const Header = (props: Props) => {
                         />
                     </Box>
 
-                    <Box sx={{ padding: '1rem', display: { xs: 'none', md: 'flex' }, gap: '3.5rem' }}>
+                    <Box sx={{ padding: '1rem', display: { xs: 'none', md: 'flex' }, gap: '3rem' }}>
                         {navItems.map((item) => (
-                            <Link to={item.to} key={item.label} style={{ color: '#ffff', fontWeight: 'bold' }}>
-                                {item.label}
-                            </Link>
+                            <Styled.LinkStyled active={location.pathname === item.to} to={item.to} key={item.label} >
+                                <Styled.LinkTextStyled active={location.pathname === item.to}>{item.label}</Styled.LinkTextStyled>
+                            </Styled.LinkStyled>
                         ))}
                     </Box>
                 </Styled.ToolbarStyled>
