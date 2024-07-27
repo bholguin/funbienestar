@@ -12,11 +12,11 @@ export namespace Styled {
         width: '100%',
         gridTemplateColumns: 'repeat(2, 1fr) !important',
         [theme.breakpoints.up('md')]: {
-            width: '80%',
+            width: '90%',
             gridTemplateColumns: 'repeat(3, 1fr) !important',
         },
         [theme.breakpoints.up('lg')]: {
-            width: '60%',
+            width: '90%',
             gridTemplateColumns: 'repeat(4, 1fr) !important',
         }
     }))
