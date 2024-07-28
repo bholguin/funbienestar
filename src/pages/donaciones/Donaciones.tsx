@@ -1,7 +1,8 @@
 import { Box, ImageListItem, Typography } from "@mui/material"
 import { useDonaciones } from "./Donaciones.hook"
 import { Styled } from "./Donaciones.styles"
-import CreditCardIcon from '@mui/icons-material/CreditCard';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { Link } from "react-router-dom";
 
 export const Donaciones = () => {
     const { itemData } = useDonaciones()
@@ -23,29 +24,26 @@ export const Donaciones = () => {
             }}>
                 DONA AQUÍ
             </Typography>
-            <Typography style={{textAlign: 'start'}}>
+            <Typography style={{ textAlign: 'start' }}>
                 Apoyamos la inclusión laboral formal de los beneficiarios con
                 discapacidad y sus familias. Hacemos acompañamiento a nuestros
                 héroes y a las empresas que así lo deseen.
                 Construimos alianzas con empresas privadas y empresarios para
                 crear oportunidades laborales.
             </Typography>
-            <Box sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '.5rem',
-                fontSize: '1.3rem'
-            }}>
-                <CreditCardIcon style={{fontSize: '1.8rem'}} /> XXXX-XXXX-XXXX-XXXX - Bank1
-            </Box>
-            <Box sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '.5rem',
-                fontSize: '1.3rem'
-            }}>
-                <CreditCardIcon style={{fontSize: '1.8rem'}} /> XXXX-XXXX-XXXX-XXXX - Bank2
-            </Box>
+            <Link
+                target="_blank"
+                to='https://wa.me/+573118270406'
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '.3rem',
+                    fontSize: '1.3rem',
+                    textDecoration: 'underline'
+                }}>
+                <WhatsAppIcon style={{ fontSize: '2rem' }} /> 
+                <Typography style={{padding: '0px'}}>Comunicate con nosotros para mas información</Typography>
+            </Link>
             <Styled.BoxPhotos>
                 <Styled.ImageListStyled
                     variant="quilted"
