@@ -42,7 +42,7 @@ export const Donaciones = () => {
                     textDecoration: 'underline'
                 }}>
                 <WhatsAppIcon style={{ fontSize: '2rem' }} /> 
-                <Typography style={{padding: '0px'}}>Comunicate con nosotros para mas información</Typography>
+                <Typography style={{padding: '0px', textAlign: 'start'}}>Comunicate con nosotros para mas información</Typography>
             </Link>
             <Styled.BoxPhotos>
                 <Styled.ImageListStyled
