@@ -114,7 +114,11 @@ export namespace Styled {
         display: 'grid',
         width: '98%',
         gridTemplateColumns: 'repeat(2, 1fr) !important',
+        justifyContent: 'center',
+        alignItems: 'center',
         [theme.breakpoints.up('md')]: {
+            display: 'flex',
+            flexWrap: 'wrap',
             width: '80%',
             gridTemplateColumns: 'repeat(2, 1fr) !important',
         },

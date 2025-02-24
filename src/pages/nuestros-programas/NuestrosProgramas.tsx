@@ -21,8 +21,8 @@ export const NuestrosProgramas = () => {
         }}>
 
             <Programa
-                src="/assets/juegos-olimpicos.jpeg"
-                title=" PATROCINIO A DEPORTISTAS"
+                src="/assets/paralimpicos-2.jpeg"
+                title="PATROCINIO A DEPORTISTAS"
                 description="Patrocinamos deportistas de alto rendimiento y equipos deportivos. Los apoyamos para participar en eventos nacionales e internacionales de diferentes disciplinas, que les permitan clasificar a los mundiales y juegos paralímpicos."
             />
             <Programa

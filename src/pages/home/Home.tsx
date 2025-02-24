@@ -59,8 +59,8 @@ export const Home = () => {
                 width: '100%'
             }}
         >
-            <video style={{width: '400px'}} controls autoPlay playsInline>
-                <source src="/assets/video.mp4" type="video/mp4" />
+            <video style={{width: '400px'}} controls playsInline>
+                <source src="/assets/video-paralimpicos.mp4" type="video/mp4" />
             </video>
         </Box>
         <Styled.SectionBox>
@@ -80,6 +80,20 @@ export const Home = () => {
                 }} alt="" />
             </Styled.SectionBoxOptions>
         </Styled.SectionBox>
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                paddingTop: '.5rem',
+                paddingBottom: '.5rem',
+                width: '100%'
+            }}
+        >
+            <video style={{width: '400px'}} controls playsInline>
+                <source src="/assets/video.mp4" type="video/mp4" />
+            </video>
+        </Box>
         <Box sx={{
             overflow: 'hidden',
             padding: '2rem',

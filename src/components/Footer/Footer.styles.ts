@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, Link, styled, Typography } from "@mui/material";
 
 export namespace Styled {
     export const Content = styled(Box)(({theme}) => ({
@@ -27,7 +27,7 @@ export namespace Styled {
             gap: '2rem',
         }
     }))
-    export const CompanyContact= styled(Box)(() => ({
+    export const CompanyContact= styled(Link)(() => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
