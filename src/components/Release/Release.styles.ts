@@ -39,5 +39,6 @@ export namespace Styled {
     textDecoration: 'underline',
     fontSize: '.9rem',
     marginLeft: '5px',
+    whiteSpace: 'nowrap',
   }));
 }
