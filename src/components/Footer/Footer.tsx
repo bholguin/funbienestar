@@ -28,6 +28,9 @@ export const Footer = () => (
           <li>
             <Link to="/donaciones">Donaciones</Link>
           </li>
+          <li>
+            <Link to="/resultados">Resultados</Link>
+          </li>
         </ul>
       </div>
       <div>

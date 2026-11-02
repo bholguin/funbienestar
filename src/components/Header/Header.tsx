@@ -5,6 +5,7 @@ const links = [
   { label: "Nosotros", to: "/nosotros" },
   { label: "Programas", to: "/nuestros-programas" },
   { label: "Donaciones", to: "/donaciones" },
+  { label: "Resultados", to: "/resultados" },
 ]
 
 export const Header = () => {

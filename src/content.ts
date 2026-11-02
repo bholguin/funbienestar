@@ -378,4 +378,10 @@ export const seoByPath: Record<
       "Done tiempo, trabajo o recursos a Funbienestar. El aporte se acuerda por WhatsApp: no hay pago en la página.",
     image: shots.bonoComedor.src,
   },
+  "/resultados": {
+    title: "Resultados | Funbienestar",
+    description:
+      "Último resultado de las loterías del día: Cundinamarca, Cruz Roja, Valle, Bogotá, Medellín y Boyacá.",
+    image: shots.colombia.src,
+  },
 }

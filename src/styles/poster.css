@@ -454,6 +454,51 @@ figure { margin: 0; }
   padding-top: 16px;
   font-size: 0.95rem;
 }
+.page-head { background: var(--navy); color: white; padding: 36px 0 32px; }
+.page-head h1 {
+  max-width: 14em;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: white;
+}
+.page-head p { margin-top: 12px; max-width: 40em; font-size: 1.12rem; color: white; }
+.rifa-grid { display: grid; gap: 16px; }
+.rifa { background: white; border-radius: 12px; padding: 20px 18px 18px; }
+.rifa-logo {
+  display: block;
+  height: 78px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 14px;
+}
+.rifa-dia {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.rifa h3 { margin-top: 4px; font-size: 1.3rem; line-height: 1.25; color: var(--navy); }
+.rifa-numero { display: flex; gap: 8px; margin-top: 16px; }
+.rifa-numero span {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 60px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.rifa-serie { margin-top: 12px; color: var(--navy); font-weight: 700; }
+.rifa-meta, .rifa-vacio, .rifa-estado { margin-top: 8px; }
+.rifa a { display: inline-block; margin-top: 14px; font-weight: 700; }
+.rifa-nota { margin-top: 22px; max-width: 62ch; font-size: 0.98rem; }
 .plain { min-height: 60svh; display: grid; align-content: end; gap: 12px; padding: 48px 0; }
 .plain h1 { font-size: clamp(2rem, 4vw, 3.2rem); color: var(--navy); }
 
@@ -488,6 +533,8 @@ h2[id], article[id], section[id] { scroll-margin-top: 88px; }
   .sheet-flip { grid-template-columns: 0.95fr 1.05fr; }
   .sheet-flip figure { order: 2; }
   .motivos { grid-template-columns: 1fr 1fr; }
+  .page-head { padding: 56px 0 48px; }
+  .rifa-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1.3fr 0.7fr 0.8fr; }
 }
 

@@ -5,6 +5,7 @@ import { Home } from "./pages/home"
 import { NoEncontrada } from "./pages/no-encontrada/NoEncontrada"
 import { Nosotros } from "./pages/nosotros"
 import { NuestrosProgramas } from "./pages/nuestros-programas"
+import { Rifas } from "./pages/rifas/Rifas"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="nuestros-programas" element={<NuestrosProgramas />} />
           <Route path="donaciones" element={<Donaciones />} />
+          <Route path="resultados" element={<Rifas />} />
           <Route path="*" element={<NoEncontrada />} />
         </Route>
       </Routes>
