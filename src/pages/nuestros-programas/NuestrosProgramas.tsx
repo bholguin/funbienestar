@@ -20,7 +20,6 @@ export const NuestrosProgramas = () => (
         </div>
         <figure>
           <ShotImg shot={shots.medalla} priority />
-          <figcaption>{shots.medalla.label}</figcaption>
         </figure>
       </div>
     </header>
@@ -31,7 +30,6 @@ export const NuestrosProgramas = () => (
           <div className={index % 2 ? "wrap sheet sheet-flip" : "wrap sheet"}>
             <figure>
               <ShotImg shot={program.image} />
-              <figcaption>{program.image.label}</figcaption>
             </figure>
             <div>
               <h2>

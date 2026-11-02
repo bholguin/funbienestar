@@ -179,7 +179,6 @@ export const Home = () => {
             {registro.map((shot) => (
               <figure key={shot.src}>
                 <ShotImg shot={shot} />
-                <figcaption>{shot.label}</figcaption>
               </figure>
             ))}
           </div>

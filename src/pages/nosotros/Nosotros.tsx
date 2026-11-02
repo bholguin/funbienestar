@@ -17,7 +17,6 @@ export const Nosotros = () => (
         </div>
         <figure>
           <ShotImg shot={shots.bandera} priority />
-          <figcaption>{shots.bandera.label}</figcaption>
         </figure>
       </div>
     </header>
@@ -34,7 +33,6 @@ export const Nosotros = () => (
         </div>
         <figure>
           <ShotImg shot={shots.familia} />
-          <figcaption>{shots.familia.label}</figcaption>
         </figure>
       </div>
     </section>
@@ -50,7 +48,6 @@ export const Nosotros = () => (
         </div>
         <figure>
           <ShotImg shot={shots.jamundi} />
-          <figcaption>{shots.jamundi.label}</figcaption>
         </figure>
       </div>
     </section>
@@ -66,7 +63,6 @@ export const Nosotros = () => (
         </div>
         <figure>
           <ShotImg shot={shots.sillaPolicia} />
-          <figcaption>{shots.sillaPolicia.label}</figcaption>
         </figure>
       </div>
     </section>

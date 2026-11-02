@@ -31,6 +31,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 ::selection { background: #cfe7f8; color: var(--navy); }
 h1, h2, h3, p { margin: 0; }
 ul { margin: 0; padding: 0; list-style: none; }
+figure { margin: 0; }
 
 .skip {
   position: absolute;
@@ -290,7 +291,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .album { columns: 2; column-gap: 14px; margin-top: 18px; }
 .album figure { break-inside: avoid; margin: 0 0 14px; }
 .album img { width: 100%; height: auto; border-radius: 10px; }
-.album figcaption { margin-top: 6px; font-size: 0.95rem; color: var(--navy); }
 
 .page-head { padding: 40px 0 20px; }
 .page-head-grid { display: grid; gap: 28px; align-items: center; }
@@ -303,8 +303,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .page-head p { margin-top: 10px; max-width: 40ch; font-size: 1.1rem; }
 .page-head img { width: 100%; height: auto; border-radius: 12px; }
-.split figcaption, .sheet figcaption, .page-head figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--navy); }
-
 .jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 .jump a {
   display: inline-flex;
@@ -390,6 +388,17 @@ h2[id], article[id], section[id] { scroll-margin-top: 88px; }
 
 @media (max-width: 799px) {
   .video-frame video { aspect-ratio: 1 / 1; object-fit: cover; }
+  .page-head .wrap,
+  .prose .wrap,
+  .sheet { width: 100%; }
+  .page-head .wrap > div,
+  .split > div,
+  .sheet > div { padding-inline: var(--edge); }
+  .page-head img,
+  .split img,
+  .sheet img,
+  .album-wide img { border-radius: 0; }
+  .album-wide { columns: 1; width: calc(100% + 40px); margin-left: -20px; }
   .wordmark-name small { display: none; }
   .nav-tab.is-open {
     display: flex;

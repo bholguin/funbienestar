@@ -14,7 +14,6 @@ export const Donaciones = () => (
         </div>
         <figure>
           <ShotImg shot={shots.bonoComedor} priority />
-          <figcaption>{shots.bonoComedor.label}</figcaption>
         </figure>
       </div>
     </header>
@@ -31,7 +30,6 @@ export const Donaciones = () => (
         </div>
         <figure>
           <ShotImg shot={shots.bonoPendón} />
-          <figcaption>{shots.bonoPendón.label}</figcaption>
         </figure>
       </div>
     </section>
@@ -45,11 +43,10 @@ export const Donaciones = () => (
     <section className="section" aria-labelledby="entregas">
       <div className="wrap">
         <h2 id="entregas">Entregas</h2>
-        <div className="album">
+        <div className="album album-wide">
           {entregas.map((shot) => (
             <figure key={shot.src}>
               <ShotImg shot={shot} />
-              <figcaption>{shot.label}</figcaption>
             </figure>
           ))}
         </div>
