@@ -370,6 +370,7 @@ h2[id], article[id], section[id] { scroll-margin-top: 88px; }
 }
 
 @media (max-width: 799px) {
+  .video-frame video { aspect-ratio: 1 / 1; object-fit: cover; }
   .wordmark-name small { display: none; }
   .nav-tab.is-open {
     display: flex;
