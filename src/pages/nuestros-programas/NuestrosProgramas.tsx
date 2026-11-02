@@ -1,56 +1,34 @@
-import { PageHero } from "../../components/PageHero"
 import { ShotImg } from "../../components/Shot"
-import { programs, shots } from "../../content"
+import { programs } from "../../content"
 
 export const NuestrosProgramas = () => (
   <>
-    <PageHero
-      lines={["Seis programas", "en marcha"]}
-      standfirst="Deporte, retiro, rehabilitación, orientación y bienestar social."
-      shot={shots.medalla}
-    />
-    {programs.map((program, index) =>
-      program.image ? (
-        <article
-          id={program.id}
-          key={program.id}
-          className={index % 2 === 1 ? "chapter chapter--flip" : "chapter"}
-        >
-          <figure className="shutter" data-reveal="">
+    <header className="page-shout">
+      <h1 className="display">
+        <span>Seis</span> <span>programas</span>
+      </h1>
+      <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+    </header>
+    <div className="sheet-stack">
+      {programs.map((program) => (
+        <article className="sheet" id={program.id} key={program.id}>
+          <h2 className="sheet-name">
+            {program.lines[0]} {program.lines[1]}
+          </h2>
+          <figure>
             <ShotImg shot={program.image} />
           </figure>
-          <div className="chapter-copy">
-            <h2 className="head">
-              <span className="break">{program.lines[0]}</span>
-              <span className="break">{program.lines[1]}</span>
-            </h2>
+          <div className="sheet-copy">
             <p>{program.body}</p>
-            <ul>
+            {program.note ? <p>{program.note}</p> : null}
+            <ul className="terms">
               {program.terms.map((term) => (
                 <li key={term}>{term}</li>
               ))}
             </ul>
           </div>
         </article>
-      ) : (
-        <article id={program.id} key={program.id} className="chapter chapter--ink">
-          <p className="statement" data-reveal="">
-            {program.note}
-          </p>
-          <div className="chapter-copy" style={{ padding: 0 }}>
-            <h2 className="head">
-              <span className="break">{program.lines[0]}</span>
-              <span className="break">{program.lines[1]}</span>
-            </h2>
-            <p>{program.body}</p>
-            <ul>
-              {program.terms.map((term) => (
-                <li key={term}>{term}</li>
-              ))}
-            </ul>
-          </div>
-        </article>
-      )
-    )}
+      ))}
+    </div>
   </>
 )

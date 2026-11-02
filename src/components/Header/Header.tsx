@@ -28,7 +28,7 @@ export const Header = () => {
     <header className="site-header">
       <Link className="wordmark" to="/">
         <img src="/assets/logo-mark.png" alt="" width={2060} height={2200} />
-        Funbienestar
+        <span className="wordmark-name">Funbienestar</span>
       </Link>
       <button
         type="button"

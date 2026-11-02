@@ -10,6 +10,17 @@ export const Layout = () => {
   useReveal(location.pathname + location.hash)
 
   useEffect(() => {
+    const reduce =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (!reduce) return
+    document.querySelectorAll("video").forEach((video) => {
+      video.pause()
+      video.removeAttribute("autoplay")
+    })
+  }, [location.pathname])
+
+  useEffect(() => {
     const id = location.hash.replace("#", "")
     if (id) {
       const target = document.getElementById(id)

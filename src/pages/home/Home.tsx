@@ -1,300 +1,162 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { Motivos } from "../../components/Motivos"
 import { ShotImg } from "../../components/Shot"
-import {
-  aliados,
-  EMAIL,
-  PDF,
-  PHONE_DISPLAY,
-  programs,
-  shots,
-  wa,
-} from "../../content"
+import { aliados, EMAIL, PHONE_DISPLAY, PHONE_TEL, programs, registro, shots, videos } from "../../content"
 
-const delay = (ms: number) => ({ ["--d" as string]: `${ms}ms` })
+const rise = (ms: number) => ({ ["--d" as string]: `${ms}ms` })
 
-export const Home = () => {
-  const [lit, setLit] = useState(0)
-
-  useEffect(() => {
-    if (typeof window.matchMedia !== "function") return
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setLit(-1)
-      document.querySelectorAll("video").forEach((video) => {
-        video.pause()
-        video.removeAttribute("autoplay")
-      })
-      return
-    }
-    const timer = window.setInterval(() => {
-      setLit((value) => (value + 1) % aliados.length)
-    }, 2000)
-    return () => window.clearInterval(timer)
-  }, [])
-
-  return (
-    <>
-      <section className="home-hero" aria-label="Inicio">
-        <div className="masthead">
-          <div className="cell cell-a">
-            <ShotImg shot={shots.podio} priority />
-          </div>
-          <div className="cell tile-accent hide-sm cell-yellow" />
-          <div className="cell cell-b">
-            <ShotImg shot={shots.jamundi} priority />
-          </div>
-          <div className="cell tile-ink hide-sm cell-ink">
-            <p>Colombia</p>
-          </div>
-          <div className="cell cell-video">
-            <ShotImg shot={shots.bandera} />
-          </div>
-          <div className="cell tile-surface hide-sm cell-surface" />
-          <div className="cell cell-c">
-            <ShotImg shot={shots.popayan} />
-          </div>
-        </div>
+export const Home = () => (
+  <>
+    <section className="hero" aria-label="Inicio">
+      <div className="hero-field">
         <div className="hero-copy">
-          <p className="statement" data-load="" style={delay(420)}>
-            Para heridos del servicio y sus familias.
-          </p>
-          <h1 className="display lines">
-            <span className="line">
-              <span data-line="" style={{ ["--i" as string]: 0 }}>
-                El bienestar
-              </span>
-            </span>
-            <span className="line">
-              <span data-line="" style={{ ["--i" as string]: 1 }}>
-                no se retira
-              </span>
-            </span>
+          <h1 className="display">
+            <span>Apoyo</span> <span>sigue</span>
           </h1>
         </div>
-      </section>
+        <figure className="hero-shot">
+          <ShotImg shot={shots.medalla} priority />
+        </figure>
+      </div>
+      <div className="hero-band">
+        <p>Para heridos de la Fuerza Pública y del INPEC, y para sus familias.</p>
+        <Link className="chunky" to="/donaciones#escribir">
+          Escribir
+        </Link>
+      </div>
+    </section>
 
-      <section className="block" aria-labelledby="fundacion">
-        <div className="axis">
-          <h2 id="fundacion" className="head" data-reveal="">
-            La fundación
-          </h2>
-          <p className="statement" data-reveal="" style={delay(80)}>
-            Entidad privada, sin ánimo de lucro, con personería jurídica.
-          </p>
-        </div>
-        <div className="quad">
-          <p data-reveal="">
-            <strong>Quién. </strong>
-            Hombres y mujeres de las Fuerzas Militares, de la Policía y del INPEC que quedaron heridos o
-            con una discapacidad adquirida. También sus familias, y las de quienes murieron cumpliendo
-            su deber.
-          </p>
-          <p data-reveal="" style={delay(70)}>
-            <strong>Qué. </strong>
-            Concibe, promueve y ejecuta planes de bienestar: patrocinio deportivo, apoyo después del
-            retiro, material de rehabilitación, orientación jurídica y psicológica, y bienestar social.
-          </p>
-          <p data-reveal="" style={delay(140)}>
-            <strong>Dónde. </strong>
-            El trabajo es en Colombia. La oficina física se está reubicando y la atención sigue por
-            canales virtuales, con la misma validez.{" "}
-            <a className="mark" href={PDF} target="_blank" rel="noreferrer">
-              Leer el aviso de reubicación
-            </a>
-            .
-          </p>
-          <p data-reveal="" style={delay(210)}>
-            <strong>Cómo. </strong>
-            Por WhatsApp al {PHONE_DISPLAY} o al correo {EMAIL}.{" "}
-            <a className="mark" href="/assets/video.mp4">
-              Ver el registro de actividades
-            </a>{" "}
-            y{" "}
-            <a className="mark" href="/assets/video-paralimpicos.mp4">
-              el de deporte
-            </a>
-            .
-          </p>
-        </div>
-        <video
-          className="registro"
-          poster={shots.medalla.src}
-          muted
-          playsInline
-          loop
-          autoPlay
-          preload="metadata"
-          aria-label="Registro en video del acompañamiento deportivo"
-        >
-          <source src="/assets/video-paralimpicos.mp4" type="video/mp4" />
-        </video>
-      </section>
-
-      <section className="block" aria-labelledby="mision">
-        <div className="axis">
-          <h2 id="mision" className="head" data-reveal="">
-            <span className="break">Misión</span>
-            <span className="break">y visión</span>
-          </h2>
-          <p className="statement" data-reveal="" style={delay(80)}>
-            Protege la salud, la nutrición y la recreación, y abre caminos de inclusión social, educativa
-            y económica.
-          </p>
-        </div>
-        <div className="about-grid">
-          <figure className="about-photo shutter" data-reveal="">
-            <ShotImg shot={shots.bandera} />
-            <figcaption className="about-note">
-              Un acto con personal del Ejército, frente a la bandera de Colombia.
-            </figcaption>
-          </figure>
-          <div className="about-tile" data-reveal="" style={delay(90)}>
-            <p className="place">Colombia</p>
-            <dl className="facts">
-              <div>
-                <dt>Atención</dt>
-                <dd>Virtual, mientras se reubica la oficina</dd>
-              </div>
-              <div>
-                <dt>Teléfono</dt>
-                <dd>
-                  <a href="tel:+573118270406">{PHONE_DISPLAY}</a>
-                </dd>
-              </div>
-              <div>
-                <dt>Correo</dt>
-                <dd>
-                  <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-                </dd>
-              </div>
-            </dl>
-            <Link className="mark" to="/nosotros">
-              Leer la misión completa
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="split" aria-labelledby="programas">
-        <div className="split-lead">
-          <h2 id="programas" className="head" data-reveal="">
-            <span className="break">Seis formas</span>
-            <span className="break">de acompañar</span>
-          </h2>
-          <div className="split-foot">
-            <p data-reveal="" style={delay(80)}>
-              Deporte, retiro, rehabilitación, orientación y bienestar social.
-            </p>
-            <Link className="mark" to="/nuestros-programas" data-reveal="" style={delay(140)}>
-              Ver cada programa
-            </Link>
-          </div>
-        </div>
-        <div className="rows">
-          {programs.map((program, index) => (
-            <Link
-              key={program.id}
-              to={`/nuestros-programas#${program.id}`}
-              data-reveal=""
-              style={delay(index * 70)}
-            >
-              <h3>
-                <span className="break">{program.lines[0]}</span>
-                <span className="break">{program.lines[1]}</span>
-              </h3>
-              <p>{program.summary}</p>
-              <ul>
-                {program.terms.map((term) => (
-                  <li key={term}>{term}</li>
-                ))}
-              </ul>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="triptych" aria-labelledby="registro">
-        <div className="triptych-stage">
-          <div className="triptych-copy">
-            <h2 id="registro" className="head" data-reveal="">
-              <span className="break">El trabajo</span>
-              <span className="break">en imágenes</span>
-            </h2>
-            <p className="statement" data-reveal="" style={delay(80)}>
-              Competencia, entrega de reconocimientos y acompañamiento en el terreno.
-            </p>
-          </div>
-          <div className="triptych-row">
-            <ShotImg shot={shots.reconocimiento} className="side" />
-            <ShotImg shot={shots.medalla} className="center" />
-            <ShotImg shot={shots.colombia} className="side" />
-          </div>
-        </div>
-      </section>
-
-      <section className="block names-block" aria-labelledby="aliados">
-        <h2 id="aliados" className="head" data-reveal="">
-          Trabaja junto a
+    <section aria-labelledby="en-video">
+      <div className="band" style={{ background: "var(--ink)", color: "var(--white)" }}>
+        <h2 id="en-video" className="head" data-reveal="">
+          En video
         </h2>
-        <p className="statement names" data-reveal="" style={delay(80)}>
-          {aliados.map((name, index) => (
-            <span key={name}>
-              <span className={lit === -1 || lit === index ? "name is-on" : "name"}>{name}</span>
-              {index < aliados.length - 1 ? ", " : "."}
-            </span>
-          ))}
+      </div>
+      <div className="reels">
+        {videos.map((video) => (
+          <figure className="reel" key={video.src}>
+            <video
+              src={video.src}
+              poster={video.poster}
+              muted
+              loop
+              playsInline
+              autoPlay
+              controls
+              aria-label={video.alt}
+            />
+            <figcaption>{video.label}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section className="allies" aria-labelledby="aliados">
+      <h2 id="aliados" className="head" data-reveal="">
+        Aliados
+      </h2>
+      <p className="lead" data-reveal="" style={rise(80)}>
+        Policía Nacional, INPEC, Ejército Nacional, CASUR y el Ministerio de Educación.
+      </p>
+      <ul className="crest-board">
+        {aliados.map((ally) => (
+          <li className="crest" key={ally.name}>
+            <img src={ally.src} alt="" width={ally.width} height={ally.height} />
+            <span>{ally.name}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section className="stairs-section" aria-labelledby="la-fundacion">
+      <div>
+        <h2 id="la-fundacion" className="head">
+          La fundación
+        </h2>
+        <p className="stairs">
+          <span>Heridos del servicio,</span>
+          <span>sus familias, y las de</span>
+          <span>quienes murieron en el deber.</span>
         </p>
-      </section>
+        <p style={{ marginTop: "18px" }}>
+          <Link className="note-link" to="/nosotros">
+            Misión, visión y a quién acompaña
+          </Link>
+        </p>
+      </div>
+      <div className="stair-photos">
+        <ShotImg shot={shots.podio} />
+        <ShotImg shot={shots.popayan} />
+      </div>
+    </section>
 
-      <section className="block contact" aria-labelledby="escribanos">
-        <div>
-          <h2 id="escribanos" className="head" data-reveal="">
-            Escríbanos
-          </h2>
-          <p className="statement" data-reveal="" style={delay(80)}>
-            La orientación, la donación y las alianzas llegan al mismo número.
-          </p>
-        </div>
-        <div className="contact-photo shutter" data-reveal="">
-          <ShotImg shot={shots.bonoOficina} />
-        </div>
-        <div className="contact-links" data-reveal="" style={delay(90)}>
-          <p>¿Por qué escribe?</p>
-          <a href={wa("Hola, Funbienestar. Quiero información.")} target="_blank" rel="noreferrer">
-            WhatsApp {PHONE_DISPLAY}
-          </a>
-          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          <p className="small">Colombia. Respondemos por estos canales.</p>
-        </div>
-      </section>
+    <section aria-labelledby="programas">
+      <div className="band">
+        <h2 id="programas" className="head" data-reveal="">
+          Seis programas
+        </h2>
+      </div>
+      <div className="program-grid">
+        {programs.map((program) => (
+          <Link className="program-tile" key={program.id} to={`/nuestros-programas#${program.id}`}>
+            <ShotImg shot={program.image} />
+            <span>
+              {program.lines[0]} {program.lines[1]}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
 
-      <section aria-labelledby="aportar-titulo">
-        <div className="strip">
-          <ShotImg shot={shots.bonoComedor} />
-          <ShotImg shot={shots.jamundi} />
-          <ShotImg shot={shots.bonoCasa} />
-        </div>
-        <div className="cta-band" id="aportar">
-          <div>
-            <h2 id="aportar-titulo" className="head" data-reveal="">
-              <span className="break">Elija el mensaje</span>
-              <span className="break">y escríbanos</span>
-            </h2>
-            <p data-reveal="" style={delay(80)}>
-              Tiempo, trabajo o recursos. El mensaje sale listo por{" "}
-              <a className="mark" href={wa("Hola, Funbienestar. Quiero donar y saber cómo puedo aportar.")}>
-                WhatsApp
-              </a>
-              .
-            </p>
-          </div>
-          <Motivos />
-          <div className="cta-portrait">
-            <ShotImg shot={shots.popayan} />
-          </div>
-        </div>
-      </section>
-    </>
+    <section aria-labelledby="registro">
+      <div className="band band-split" style={{ background: "var(--ink)", color: "var(--white)" }}>
+        <h2 id="registro" className="head" data-reveal="">
+          El registro
+        </h2>
+        <p className="lead" data-reveal="" style={{ ...rise(70), color: "var(--white)" }}>
+          Entregas, deporte y acompañamiento en las fotos de la fundación.
+        </p>
+      </div>
+      <div className="wall">
+        {registro.map((shot) => (
+          <figure className="print" key={shot.src}>
+            <ShotImg shot={shot} />
+            <figcaption>{shot.label}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section aria-labelledby="contacto">
+      <div className="band">
+        <h2 id="contacto" className="head">
+          Contacto
+        </h2>
+      </div>
+      <ContactRows />
+    </section>
+
+    <Link className="escriba" to="/donaciones#escribir">
+      <p>El mensaje sale escrito. Solo falta enviarlo.</p>
+      <svg className="arrow-corner" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M8 40 L40 8 M18 8 H40 V30" fill="none" stroke="currentColor" strokeWidth="3" />
+      </svg>
+      <span className="giant">Escriba</span>
+    </Link>
+  </>
+)
+
+export function ContactRows() {
+  return (
+    <div className="rows">
+      <p className="row">Funbienestar</p>
+      <p className="row">Atención virtual</p>
+      <p className="row">Colombia</p>
+      <a className="row" href={`tel:${PHONE_TEL}`}>
+        {PHONE_DISPLAY}
+      </a>
+      <a className="row row-mail" href={`mailto:${EMAIL}`}>
+        {EMAIL}
+      </a>
+    </div>
   )
 }
