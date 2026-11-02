@@ -5,22 +5,19 @@ const motivoDe = (id: string) => motivos.find((item) => item.id === (id === "pat
 
 export const NuestrosProgramas = () => (
   <>
-    <header className="page-head">
-      <div className="wrap page-head-grid">
-        <div>
-          <h1>Seis programas</h1>
-          <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
-          <nav className="jump" aria-label="Programas">
-            {programs.map((program) => (
-              <a key={program.id} href={`#${program.id}`}>
-                {program.lines[0]} {program.lines[1]}
-              </a>
-            ))}
-          </nav>
-        </div>
-        <figure>
-          <ShotImg shot={shots.medalla} priority />
-        </figure>
+    <header className="page-banner portrait">
+      <ShotImg shot={shots.medalla} priority />
+      <div className="page-banner-scrim" />
+      <div className="wrap page-banner-copy">
+        <h1>Seis programas</h1>
+        <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+        <nav className="jump" aria-label="Programas">
+          {programs.map((program) => (
+            <a key={program.id} href={`#${program.id}`}>
+              {program.lines[0]} {program.lines[1]}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
     {programs.map((program, index) => {

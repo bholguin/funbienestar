@@ -4,20 +4,17 @@ import { shots } from "../../content"
 
 export const Nosotros = () => (
   <>
-    <header className="page-head">
-      <div className="wrap page-head-grid">
-        <div>
-          <h1>Quiénes somos</h1>
-          <p>Entidad privada, sin ánimo de lucro, con personería jurídica.</p>
-          <nav className="jump" aria-label="En esta página">
-            <a href="#mision">Misión</a>
-            <a href="#vision">Visión</a>
-            <a href="#a-quienes">A quién acompaña</a>
-          </nav>
-        </div>
-        <figure>
-          <ShotImg shot={shots.bandera} priority />
-        </figure>
+    <header className="page-banner">
+      <ShotImg shot={shots.bandera} priority />
+      <div className="page-banner-scrim" />
+      <div className="wrap page-banner-copy">
+        <h1>Quiénes somos</h1>
+        <p>Entidad privada, sin ánimo de lucro, con personería jurídica.</p>
+        <nav className="jump" aria-label="En esta página">
+          <a href="#mision">Misión</a>
+          <a href="#vision">Visión</a>
+          <a href="#a-quienes">A quién acompaña</a>
+        </nav>
       </div>
     </header>
     <section className="prose">
