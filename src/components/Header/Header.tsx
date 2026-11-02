@@ -26,32 +26,35 @@ export const Header = () => {
 
   return (
     <header className="site-header">
-      <Link className="wordmark" to="/">
-        <img src="/assets/logo-mark.png" alt="" width={2060} height={2200} />
-        <span className="wordmark-name">
-          <strong>Funbienestar</strong>
-          <small>Fundación Nacional de Bienestar Social</small>
-        </span>
-      </Link>
-      <button
-        type="button"
-        className="menu-toggle"
-        aria-expanded={open}
-        aria-controls="menu-principal"
-        onClick={() => setOpen((value) => !value)}
-      >
-        {open ? "Cerrar" : "Menú"}
-      </button>
-      <nav id="menu-principal" className={open ? "nav-tab is-open" : "nav-tab"} aria-label="Secciones">
-        {links.map((link) => (
-          <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? "is-active" : undefined)}>
-            {link.label}
-          </NavLink>
-        ))}
-      </nav>
-      <Link className="header-action" to="/donaciones#escribir">
-        Donar
-      </Link>
+      <div className="header-bar">
+        <Link className="wordmark" to="/">
+          <img src="/assets/logo-mark.png" alt="" width={2060} height={2200} />
+          <span className="wordmark-name">
+            <strong>Funbienestar</strong>
+            <small>Fundación Nacional de Bienestar Social</small>
+          </span>
+        </Link>
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-expanded={open}
+          aria-controls="menu-principal"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          onClick={() => setOpen((value) => !value)}
+        >
+          <span className="menu-bars" />
+        </button>
+        <nav id="menu-principal" className={open ? "nav-tab is-open" : "nav-tab"} aria-label="Secciones">
+          {links.map((link) => (
+            <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? "is-active" : undefined)}>
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+        <Link className="header-action" to="/donaciones#escribir">
+          Donar
+        </Link>
+      </div>
     </header>
   )
 }
