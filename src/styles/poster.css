@@ -241,10 +241,10 @@ figure { margin: 0; }
 }
 .mist .card { background: white; }
 .card img { width: 100%; height: auto; border-radius: 12px; }
-.card div { padding: 14px 4px 8px; }
+.card div { padding: 14px 2px 6px; display: flex; flex-direction: column; flex: 1; }
 .card h3 { font-size: 1.35rem; line-height: 1.25; font-weight: 700; color: var(--navy); }
 .card p { margin-top: 8px; color: var(--navy); }
-.card em { display: block; margin-top: 12px; font-style: normal; font-weight: 700; color: var(--blue); }
+.card em { display: block; margin-top: auto; padding-top: 14px; font-style: normal; font-weight: 700; color: var(--blue); }
 
 .ally-marquee { overflow: hidden; margin-top: 22px; }
 .ally-track {
@@ -386,7 +386,8 @@ h2[id], article[id], section[id] { scroll-margin-top: 88px; }
   .page-banner { min-height: 68svh; }
   .page-banner.tall { min-height: 88svh; }
   .facts { grid-template-columns: repeat(3, 1fr); }
-  .cards { grid-template-columns: repeat(3, 1fr); }
+  .cards { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+  .card img { aspect-ratio: 4 / 3; object-fit: cover; object-position: center 22%; }
   .help { grid-template-columns: repeat(3, 1fr); }
   .album { columns: 4; }
   .split { grid-template-columns: 1.05fr 0.95fr; gap: 36px; }
