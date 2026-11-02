@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { ShotImg } from "../../components/Shot"
+import { VideoFrame } from "../../components/VideoFrame"
 import { aliados, motivos, programs, registro, shots, videos, wa } from "../../content"
 
 const slides = [shots.podio, shots.popayan, shots.familia, shots.medalla]
@@ -77,16 +78,7 @@ export const Home = () => {
             mujeres de las Fuerzas Militares, de la Policía y del INPEC heridos o con discapacidad
             adquirida, a sus familias y a las familias de quienes murieron cumpliendo el deber.
           </p>
-          <figure className="video-frame">
-            <video
-              src={videos[0].src}
-              poster={videos[0].poster}
-              controls
-              playsInline
-              aria-label={videos[0].alt}
-            />
-            <figcaption>{videos[0].label}</figcaption>
-          </figure>
+          <VideoFrame video={videos[0]} caption={videos[0].label} />
           <div className="facts">
             <p className="fact">
               <strong>6</strong>
@@ -178,15 +170,7 @@ export const Home = () => {
             Así se ve el trabajo: entregas, deporte y acompañamiento, en las fotos y los videos de la
             fundación.
           </p>
-          <figure className="video-frame">
-            <video
-              src={videos[1].src}
-              poster={videos[1].poster}
-              controls
-              playsInline
-              aria-label={videos[1].alt}
-            />
-          </figure>
+          <VideoFrame video={videos[1]} />
           <div className="album" style={{ marginTop: 18 }}>
             {registro.map((shot) => (
               <figure key={shot.src}>

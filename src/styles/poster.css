@@ -251,13 +251,41 @@ figure { margin: 0; }
 .center { text-align: center; }
 .center .lede { margin-inline: auto; }
 
-.video-frame {
-  margin-top: 28px;
+.video-frame { margin-top: 28px; }
+.video-stage {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
   background: #000;
 }
 .video-frame video { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #000; }
+.video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(14, 42, 71, 0.78);
+  color: white;
+  cursor: pointer;
+}
+.video-play:hover, .video-play:focus-visible { background: rgba(14, 42, 71, 0.92); }
+.video-play-icon {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent white;
+}
 .video-frame figcaption { padding: 10px 4px 0; color: var(--navy); font-size: 1rem; }
 
 .facts {
