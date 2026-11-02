@@ -11,13 +11,6 @@ export const NuestrosProgramas = () => (
       <div className="wrap page-banner-copy">
         <h1>Seis programas</h1>
         <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
-        <nav className="jump" aria-label="Programas">
-          {programs.map((program) => (
-            <a key={program.id} href={`#${program.id}`}>
-              {program.lines[0]} {program.lines[1]}
-            </a>
-          ))}
-        </nav>
       </div>
     </header>
     {programs.map((program, index) => {

@@ -327,21 +327,6 @@ figure { margin: 0; }
   color: white;
 }
 .page-banner p { margin-top: 12px; max-width: 34em; font-size: 1.15rem; color: white; }
-.page-banner .jump a { background: white; color: var(--navy); }
-.page-banner .jump a:hover, .page-banner .jump a:focus-visible { background: var(--blue); color: white; }
-.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-.jump a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: var(--mist);
-  color: var(--navy);
-  text-decoration: none;
-  font-weight: 700;
-}
-.jump a:hover, .jump a:focus-visible { background: var(--navy); color: white; }
 
 .prose { padding: 56px 0; }
 .band { background: var(--mist); }
@@ -397,6 +382,7 @@ h2[id], article[id], section[id] { scroll-margin-top: 88px; }
   .menu-toggle { display: none; }
   .nav-tab { display: flex; align-items: center; gap: 22px; margin-left: auto; }
   .header-action { margin-left: 8px; }
+  .page-banner { min-height: 68svh; }
   .facts { grid-template-columns: repeat(3, 1fr); }
   .cards { grid-template-columns: repeat(3, 1fr); }
   .help { grid-template-columns: repeat(3, 1fr); }

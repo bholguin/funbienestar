@@ -10,11 +10,6 @@ export const Nosotros = () => (
       <div className="wrap page-banner-copy">
         <h1>Quiénes somos</h1>
         <p>Entidad privada, sin ánimo de lucro, con personería jurídica.</p>
-        <nav className="jump" aria-label="En esta página">
-          <a href="#mision">Misión</a>
-          <a href="#vision">Visión</a>
-          <a href="#a-quienes">A quién acompaña</a>
-        </nav>
       </div>
     </header>
     <section className="prose">
