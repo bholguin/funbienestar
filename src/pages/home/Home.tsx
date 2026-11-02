@@ -78,7 +78,7 @@ export const Home = () => {
             mujeres de las Fuerzas Militares, de la Policía y del INPEC heridos o con discapacidad
             adquirida, a sus familias y a las familias de quienes murieron cumpliendo el deber.
           </p>
-          <VideoFrame video={videos[0]} caption={videos[0].label} />
+          <VideoFrame video={videos[0]} />
           <div className="facts">
             <p className="fact">
               <strong>6</strong>

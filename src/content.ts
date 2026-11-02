@@ -217,7 +217,6 @@ export const videos = [
   {
     src: "/assets/video-paralimpicos.mp4",
     poster: shots.medalla.src,
-    label: "Powerlifting",
     alt: "Registro en video del acompañamiento deportivo en powerlifting.",
   },
   {
