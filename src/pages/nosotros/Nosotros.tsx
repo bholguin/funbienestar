@@ -4,7 +4,7 @@ import { shots } from "../../content"
 
 export const Nosotros = () => (
   <>
-    <header className="page-banner banner-stack">
+    <header className="page-banner banner-top">
       <ShotImg shot={shots.bandera} priority />
       <div className="page-banner-scrim" />
       <div className="wrap page-banner-copy">
