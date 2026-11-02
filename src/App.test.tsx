@@ -1,9 +1,8 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react"
+import App from "./App"
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+test("muestra el nombre y el título de la fundación", () => {
+  const view = render(<App />)
+  expect(screen.getByRole("heading", { level: 1, name: /el bienestar no se retira/i })).toBeInTheDocument()
+  view.unmount()
+})

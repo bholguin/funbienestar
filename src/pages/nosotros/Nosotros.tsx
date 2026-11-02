@@ -1,95 +1,65 @@
-import { Box, Typography } from "@mui/material"
-import { useEffect } from "react"
+import { PageHero } from "../../components/PageHero"
+import { ShotImg } from "../../components/Shot"
+import { shots } from "../../content"
 
-export const Nosotros = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
-
-    return <>
-        <Box
-            sx={{
-                position: 'relative',
-                minHeight: { xs: '200px', md: '400px' },
-                overflow: 'hidden',
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                "::before": {
-                    content: '" "',
-                    position: 'absolute',
-                    backgroundImage: 'url(/assets/inpec-helps.jpg)',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: { xs: "50% 50%", md: "50% 32%" },
-                    backgroundSize: 'cover',
-                    top: '0px',
-                    right: '0px',
-                    bottom: '0px',
-                    left: '0px',
-                    opacity: '0.7'
-                }
-            }}
-        >
-            <Typography sx={{
-                position: 'relative',
-                fontSize: { xs: "2.5rem", md: '4rem' },
-                fontWeight: 'bold',
-                color: 'white',
-                textShadow: '4px 4px 6px rgba(0,0,0,0.70)',
-            }}>
-                Quienes Somos
-            </Typography>
-        </Box>
-        <Box sx={{
-            width: "100%",
-            display: 'flex',
-            paddingTop: '2rem',
-            position: 'relative',
-            justifyContent: 'center',
-            minHeight: '70vh',
-            "::before": {
-                content: '" "',
-                position: 'absolute',
-                backgroundImage: 'url(/assets/discapacitados.png)',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: "50% 35%",
-                backgroundSize: 'cover',
-                width: { lg: '70%' },
-                margin: '0 auto',
-                top: { xs: '370px', sm: '200px', md: '120px', lg: '180px' },
-                right: '0px',
-                bottom: '0px',
-                left: '0px',
-            }
-        }}>
-            <Box sx={{
-                width: { xs: '90%', lg: '60%' },
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1rem',
-                position: 'absolute',
-                padding: '.5rem',
-                backgroundColor: 'rgba(255,255,255,0.7)',
-                borderRadius: '10px'
-            }}>
-                <Typography variant="h1">Misión</Typography>
-                <Typography variant="body1">
-                    Somos una institución sin ánimo de lucro que promueve la protección en necesidades básicas de salud, nutrición y recreación de la primera infancia,
-                    adultos mayores y personas en situación de discapacidad; así como también fomentamos programas y proyectos de inclusión social, educativa y económica.
-                </Typography>
-
-                <Typography variant="h1">Visión</Typography>
-                <Typography variant="body1">
-                    Ser una institución líder que promueva el trabajo digno por medio de la educación y la mejora en la calidad de vida de las personas beneficiarias, para así contribuir
-                    al desarrollo de nuestra patria colombiana de forma exitosa con profesionales que presten sus servicios con amor, pasión y honestidad.
-                </Typography>
-            </Box>
-
-        </Box>
-        <Box>
-
-        </Box>
-    </>
-
-}
+export const Nosotros = () => (
+  <>
+    <PageHero
+      lines={["Quiénes somos"]}
+      standfirst="Entidad privada, sin ánimo de lucro, con personería jurídica."
+      shot={shots.bandera}
+    />
+    <section className="block" aria-labelledby="mision-completa">
+      <div className="axis">
+        <h2 id="mision-completa" className="head" data-reveal="">
+          Misión
+        </h2>
+        <p className="body" data-reveal="" style={{ ["--d" as string]: "80ms" }}>
+          Somos una institución sin ánimo de lucro que promueve la protección en necesidades básicas de
+          salud, nutrición y recreación de la primera infancia, los adultos mayores y las personas en
+          situación de discapacidad. También fomentamos programas y proyectos de inclusión social,
+          educativa y económica.
+        </p>
+      </div>
+    </section>
+    <figure className="page-hero-photo shutter" data-reveal="">
+      <ShotImg shot={shots.popayan} />
+    </figure>
+    <section className="block" aria-labelledby="vision">
+      <div className="axis">
+        <h2 id="vision" className="head" data-reveal="">
+          Visión
+        </h2>
+        <p className="body" data-reveal="" style={{ ["--d" as string]: "80ms" }}>
+          Ser una institución líder que promueva el trabajo digno por medio de la educación y la mejora
+          en la calidad de vida de las personas beneficiarias, para contribuir al desarrollo de Colombia
+          con profesionales que presten sus servicios con amor, pasión y honestidad.
+        </p>
+      </div>
+    </section>
+    <section className="block" aria-labelledby="a-quienes">
+      <div className="axis">
+        <h2 id="a-quienes" className="head" data-reveal="">
+          <span className="break">A quién</span>
+          <span className="break">acompaña</span>
+        </h2>
+        <p className="body" data-reveal="" style={{ ["--d" as string]: "80ms" }}>
+          Desde hace años trabaja con hombres y mujeres de las Fuerzas Militares, de la Policía y del
+          INPEC heridos o con discapacidad adquirida, con sus familias y con las familias de quienes
+          fallecieron en cumplimiento del deber.
+        </p>
+      </div>
+    </section>
+    <div className="mosaic">
+      <figure>
+        <ShotImg shot={shots.medalla} />
+      </figure>
+      <figure>
+        <ShotImg shot={shots.jamundi} />
+      </figure>
+      <figure>
+        <ShotImg shot={shots.bonoCasa} />
+      </figure>
+    </div>
+  </>
+)

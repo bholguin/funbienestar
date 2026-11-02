@@ -1,35 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/logo.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#141820" />
+    <meta name="color-scheme" content="light" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Funbienestar acompaña en Colombia a militares, policías e INPEC heridos o con discapacidad, y a sus familias, con deporte, rehabilitación y orientación."
     />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Funbienestar" />
+    <meta property="og:title" content="Funbienestar | Fundación Nacional de Bienestar Social" />
+    <meta
+      property="og:description"
+      content="Funbienestar acompaña en Colombia a militares, policías e INPEC heridos o con discapacidad, y a sus familias, con deporte, rehabilitación y orientación."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/assets/juegos-olimpicos.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
-    <title>Funbienestar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Funbienestar | Fundación Nacional de Bienestar Social</title>
+    <script>document.documentElement.classList.add("js")</script>
+    <script type="application/ld+json" id="org-jsonld">
+      {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Fundación Nacional de Bienestar Social",
+        "alternateName": "Funbienestar",
+        "description": "Entidad privada, sin ánimo de lucro, que acompaña a militares, policías e INPEC heridos o con discapacidad, y a sus familias.",
+        "email": "funbienestar@outlook.com",
+        "telephone": "+573118270406",
+        "areaServed": { "@type": "Country", "name": "Colombia" },
+        "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+        "knowsLanguage": "es-CO"
+      }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      Fundación Nacional de Bienestar Social. Programas de deporte, rehabilitación y orientación.
+      WhatsApp +57 311 827 0406. Correo funbienestar@outlook.com.
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
