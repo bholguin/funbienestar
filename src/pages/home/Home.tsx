@@ -186,7 +186,6 @@ export const Home = () => {
               playsInline
               aria-label={videos[1].alt}
             />
-            <figcaption>{videos[1].label}</figcaption>
           </figure>
           <div className="album" style={{ marginTop: 18 }}>
             {registro.map((shot) => (

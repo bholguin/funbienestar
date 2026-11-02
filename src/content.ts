@@ -222,8 +222,7 @@ export const videos = [
   },
   {
     src: "/assets/video.mp4",
-    poster: shots.podio.src,
-    label: "Acompañamiento",
+    poster: "/assets/registro-video.jpg",
     alt: "Registro en video de las actividades de la fundación.",
   },
 ]
