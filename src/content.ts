@@ -265,22 +265,26 @@ export const motivos = [
   {
     id: "orientacion",
     label: "Necesito orientación para mí o mi familia",
-    text: "Hola, Funbienestar. Necesito orientación sobre los programas de la fundación.",
+    detail: "Para usted o para alguien de su familia. El mensaje ya dice que busca orientación sobre los programas.",
+    text: "Hola, Funbienestar. Necesito orientación sobre los programas para mí o para mi familia.",
   },
   {
     id: "donacion",
     label: "Quiero donar tiempo, trabajo o recursos",
-    text: "Hola, Funbienestar. Quiero donar y saber cómo puedo aportar.",
+    detail: "Tiempo, trabajo o recursos. En la página no hay pago: el aporte se acuerda en la conversación.",
+    text: "Hola, Funbienestar. Quiero donar tiempo, trabajo o recursos y saber cómo puedo aportar.",
   },
   {
     id: "alianza",
     label: "Mi empresa quiere abrir un cupo de trabajo",
-    text: "Hola, Funbienestar. Represento una empresa y quiero hablar de una alianza laboral.",
+    detail: "Para una empresa que quiera abrir un cupo de trabajo o hablar de una alianza.",
+    text: "Hola, Funbienestar. Represento una empresa y quiero hablar de una alianza o de un cupo de trabajo.",
   },
   {
     id: "deporte",
     label: "Quiero apoyar a un deportista",
-    text: "Hola, Funbienestar. Quiero información sobre el patrocinio a deportistas.",
+    detail: "Para quien quiera respaldar a un deportista de alto rendimiento de la fundación.",
+    text: "Hola, Funbienestar. Quiero información para apoyar el patrocinio de un deportista.",
   },
 ]
 
@@ -299,8 +303,8 @@ export const programs: Program[] = [
     id: "patrocinio",
     lines: ["Patrocinio", "deportivo"],
     summary:
-      "Apoyo para competir en eventos nacionales e internacionales y buscar la clasificación a mundiales y paralímpicos.",
-    body: "Patrocinamos deportistas de alto rendimiento y equipos deportivos. Los apoyamos para participar en eventos nacionales e internacionales de distintas disciplinas, con la meta de clasificar a mundiales y juegos paralímpicos.",
+      "Apoyo a deportistas de alto rendimiento para competir en el país y en el exterior, y para buscar la clasificación a mundiales y paralímpicos.",
+    body: "La fundación patrocina deportistas de alto rendimiento y equipos de distintas disciplinas. El apoyo está pensado para que puedan participar en eventos nacionales e internacionales y avanzar hacia mundiales y juegos paralímpicos. Quien quiera respaldar a un deportista puede escribir por WhatsApp.",
     terms: ["Alto rendimiento", "Eventos", "Paralímpicos"],
     image: shots.colombia,
   },
@@ -308,42 +312,41 @@ export const programs: Program[] = [
     id: "retiro",
     lines: ["Desde", "el retiro"],
     summary:
-      "Veteranos, retirados y sus familias comparten experiencias y conocen programas, ayudas y recursos.",
-    body: "Ofrecemos apoyo a veteranos, retirados y sus familias. La vida militar no termina al salir. En este grupo se comparten experiencias y se conocen programas, ayudas y recursos para quienes ya no están en servicio activo.",
+      "Veteranos, retirados y sus familias comparten lo vivido y conocen programas, ayudas y recursos para la vida fuera del servicio activo.",
+    body: "La vida militar no termina al dejar el uniforme. Este programa reúne a veteranos, retirados y a sus familias para compartir experiencias y para conocer programas, ayudas y recursos pensados para quien ya no está en servicio activo.",
     terms: ["Veteranos", "Familias", "Recursos"],
     image: shots.bonoCasa,
   },
   {
     id: "rehabilitacion",
     lines: ["Material", "de ayuda"],
-    summary: "Muletas, caminador, silla de ruedas y bastón para quien los necesite.",
-    body: "Entregamos material de rehabilitación física al personal que lo requiera: muletas, caminador, silla de ruedas y bastón.",
+    summary: "Muletas, caminador, silla de ruedas y bastón para quien los necesite en su recuperación.",
+    body: "Entregamos material de rehabilitación física a quien lo requiera: muletas, caminador, silla de ruedas y bastón. Son ayudas concretas para moverse y para seguir el día a día después de una lesión.",
     terms: ["Muletas", "Caminadores", "Sillas"],
     image: shots.popayan,
   },
   {
     id: "juridica",
     lines: ["Orientación", "jurídica"],
-    summary: "Personal calificado para orientar en procesos jurídicos.",
-    body: "Hay personal calificado, atento a orientar en lo relacionado con procesos jurídicos.",
+    summary: "Personal calificado para orientar cuando hay un proceso o un trámite jurídico.",
+    body: "Hay personal calificado, atento a orientar en lo relacionado con procesos jurídicos. Sirve para entender el camino y los trámites, y se pide por WhatsApp, igual que el resto de los programas.",
     terms: ["Procesos", "Trámites", "Consulta"],
     image: shots.bonoOficina,
   },
   {
     id: "psicologica",
     lines: ["Orientación", "psicológica"],
-    summary: "Acompañamiento profesional en cambios y momentos difíciles.",
+    summary: "Acompañamiento profesional para quien enfrenta un cambio o un momento difícil.",
     body: "Profesionales calificados prestan orientación y acompañamiento, y procuran alivio a las personas que enfrentan cambios y momentos difíciles.",
     terms: ["Escucha", "Cambios", "Alivio"],
     image: shots.familia,
-    note: "Cuando el servicio deja una marca, hay con quién hablar.",
+    note: "Cuando el servicio deja una marca, en la persona o en su familia, hay con quién hablar.",
   },
   {
     id: "bienestar",
     lines: ["Bienestar", "social"],
-    summary:
-      "Programas para la calidad de vida de los afiliados, con pertenencia y solidaridad.",
-    body: "El programa de bienestar social está pensado para contribuir a un entorno sano y solidario, y para los servidores públicos a nivel nacional: mejorar la calidad de vida, reconocer la labor y fortalecer el sentido de pertenencia. Los programas de Funbienestar hacen parte del desarrollo de sus afiliados.",
+    summary: "Programas para la calidad de vida de los afiliados, con reconocimiento, pertenencia y solidaridad.",
+    body: "El programa de bienestar social busca un entorno sano y solidario. Para los servidores públicos a nivel nacional, apunta a mejorar la calidad de vida, reconocer la labor cumplida y fortalecer el sentido de pertenencia. Los programas de Funbienestar hacen parte del desarrollo de sus afiliados.",
     terms: ["Afiliados", "Pertenencia", "Solidaridad"],
     image: shots.jamundi,
   },
@@ -356,25 +359,25 @@ export const seoByPath: Record<
   "/": {
     title: "Funbienestar | Fundación Nacional de Bienestar Social",
     description:
-      "Funbienestar acompaña en Colombia a militares, policías e INPEC heridos o con discapacidad, y a sus familias, con deporte, rehabilitación y orientación.",
+      "Funbienestar acompaña en Colombia a heridos de las Fuerzas Militares, la Policía y el INPEC, y a sus familias, con deporte, rehabilitación y orientación.",
     image: shots.colombia.src,
   },
   "/nosotros": {
     title: "Quiénes somos | Funbienestar",
     description:
-      "Misión y visión de la Fundación Nacional de Bienestar Social: protección, inclusión y trabajo digno para sus beneficiarios en Colombia.",
+      "Misión, visión y a quién acompaña la Fundación Nacional de Bienestar Social: entidad privada, sin ánimo de lucro, con personería jurídica.",
     image: shots.bandera.src,
   },
   "/nuestros-programas": {
     title: "Programas | Funbienestar",
     description:
-      "Seis programas de Funbienestar: patrocinio deportivo, apoyo en el retiro, rehabilitación, orientación jurídica, orientación psicológica y bienestar social.",
+      "Seis programas de Funbienestar: patrocinio deportivo, retiro, rehabilitación, orientación jurídica, orientación psicológica y bienestar social.",
     image: shots.medalla.src,
   },
   "/donaciones": {
     title: "Donaciones | Funbienestar",
     description:
-      "Apoye a Funbienestar por WhatsApp. La fundación acompaña la inclusión laboral de personas con discapacidad y abre alianzas con empresas.",
+      "Done tiempo, trabajo o recursos a Funbienestar. El aporte se acuerda por WhatsApp: no hay pago en la página.",
     image: shots.bonoComedor.src,
   },
 }

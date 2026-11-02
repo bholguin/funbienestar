@@ -8,7 +8,7 @@ export const Footer = () => (
         <h2>Funbienestar</h2>
         <p>
           Mientras se reubica la oficina física, la fundación sigue prestando sus servicios de manera
-          legal y válida por canales virtuales.
+          legal y válida por canales virtuales: teléfono, correo y WhatsApp.
         </p>
         <p>
           <a href={PDF} target="_blank" rel="noreferrer">

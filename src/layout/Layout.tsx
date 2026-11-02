@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { Outlet, useLocation } from "react-router-dom"
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
+import { Notice } from "../components/Notice"
 import { Seo } from "../components/Seo/Seo"
 import { useReveal } from "../hooks/useReveal"
 
@@ -38,6 +39,7 @@ export const Layout = () => {
         Saltar al contenido
       </a>
       <Header />
+      <Notice />
       <main id="contenido">
         <Seo />
         <Outlet />

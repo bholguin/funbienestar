@@ -31,11 +31,11 @@ export const Home = () => {
         <div className="hero-scrim" />
         <div className="hero-copy">
           <h1>
-            Heridos del servicio,
+            Acompañamos
             <br />
-            y sus familias
+            a quien sirve
           </h1>
-          <p>Funbienestar acompaña a militares, policías e INPEC.</p>
+          <p>Fuerzas Militares, Policía e INPEC, y sus familias.</p>
           <div className="hero-actions">
             <Link className="btn btn-blue" to="/nuestros-programas">
               Ver programas
@@ -73,8 +73,9 @@ export const Home = () => {
         <div className="wrap center">
           <h2>Fundación Nacional de Bienestar Social</h2>
           <p className="lede">
-            Entidad privada, sin ánimo de lucro, con personería jurídica. Acompaña a heridos del
-            servicio, a sus familias y a las familias de quienes murieron cumpliendo el deber.
+            Entidad privada, sin ánimo de lucro, con personería jurídica. Acompaña a hombres y
+            mujeres de las Fuerzas Militares, de la Policía y del INPEC heridos o con discapacidad
+            adquirida, a sus familias y a las familias de quienes murieron cumpliendo el deber.
           </p>
           <figure className="video-frame">
             <video
@@ -89,7 +90,7 @@ export const Home = () => {
           <div className="facts">
             <p className="fact">
               <strong>6</strong>
-              <span>programas en marcha, del deporte a la orientación</span>
+              <span>programas, del patrocinio deportivo a la orientación</span>
             </p>
             <p className="fact">
               <strong>{aliados.length}</strong>
@@ -97,7 +98,7 @@ export const Home = () => {
             </p>
             <p className="fact">
               <strong>WhatsApp</strong>
-              <span>el canal para pedir orientación o donar</span>
+              <span>para pedir orientación, donar o proponer una alianza</span>
             </p>
           </div>
         </div>
@@ -106,7 +107,10 @@ export const Home = () => {
       <section className="section" aria-labelledby="programas">
         <div className="wrap">
           <h2 id="programas">Seis programas</h2>
-          <p className="lede">Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+          <p className="lede">
+            Patrocinio deportivo, apoyo en el retiro, material de rehabilitación, orientación jurídica y
+            psicológica, y bienestar social.
+          </p>
           <div className="cards">
             {programs.map((program) => (
               <Link className="card" key={program.id} to={`/nuestros-programas#${program.id}`}>
@@ -127,7 +131,10 @@ export const Home = () => {
       <section className="section mist" aria-labelledby="aliados">
         <div className="wrap">
           <h2 id="aliados">Aliados</h2>
-          <p className="lede">Policía Nacional, INPEC, Ejército Nacional, CASUR y el Ministerio de Educación.</p>
+          <p className="lede">
+            La fundación trabaja junto a la Policía Nacional, el INPEC, el Ejército Nacional, CASUR y el
+            Ministerio de Educación.
+          </p>
         </div>
         <div className="ally-marquee">
           <ul className="ally-track">
@@ -146,12 +153,15 @@ export const Home = () => {
       <section className="section" aria-labelledby="sumarse">
         <div className="wrap">
           <h2 id="sumarse">Cómo sumarse</h2>
-          <p className="lede">El mensaje sale escrito. Solo falta enviarlo por WhatsApp.</p>
+          <p className="lede">
+            Orientación, una donación o una alianza laboral. El mensaje sale escrito y solo falta enviarlo
+            por WhatsApp.
+          </p>
           <div className="help">
             {motivos.slice(0, 3).map((item) => (
               <article key={item.id}>
                 <h3>{item.label}</h3>
-                <p>Se abre WhatsApp con este motivo ya escrito.</p>
+                <p>{item.detail}</p>
                 <a className="btn btn-red" href={wa(item.text)} target="_blank" rel="noreferrer">
                   Escribir
                 </a>
@@ -164,7 +174,10 @@ export const Home = () => {
       <section className="section mist" aria-labelledby="registro">
         <div className="wrap">
           <h2 id="registro">El registro</h2>
-          <p className="lede">Entregas, deporte y acompañamiento en las fotos y el video de la fundación.</p>
+          <p className="lede">
+            Así se ve el trabajo: entregas, deporte y acompañamiento, en las fotos y los videos de la
+            fundación.
+          </p>
           <figure className="video-frame">
             <video
               src={videos[1].src}

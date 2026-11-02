@@ -9,7 +9,7 @@ export const Nosotros = () => (
       <div className="page-banner-scrim" />
       <div className="wrap page-banner-copy">
         <h1>Quiénes somos</h1>
-        <p>Entidad privada, sin ánimo de lucro, con personería jurídica.</p>
+        <p>Fundación Nacional de Bienestar Social. Entidad privada, sin ánimo de lucro, con personería jurídica.</p>
       </div>
     </header>
     <section className="prose">
@@ -21,6 +21,10 @@ export const Nosotros = () => (
             salud, nutrición y recreación de la primera infancia, los adultos mayores y las personas en
             situación de discapacidad. También fomentamos programas y proyectos de inclusión social,
             educativa y económica.
+          </p>
+          <p>
+            Ese cuidado llega, en el trabajo de la fundación, a hombres y mujeres de las Fuerzas Militares,
+            de la Policía y del INPEC, y a sus familias.
           </p>
         </div>
         <figure>
@@ -37,6 +41,10 @@ export const Nosotros = () => (
             en la calidad de vida de las personas beneficiarias, para contribuir al desarrollo de Colombia
             con profesionales que presten sus servicios con amor, pasión y honestidad.
           </p>
+          <p>
+            Por eso la educación y una mejor calidad de vida están en el centro de lo que se ofrece a los
+            beneficiarios.
+          </p>
         </div>
         <figure>
           <ShotImg shot={shots.jamundi} />
@@ -48,9 +56,11 @@ export const Nosotros = () => (
         <div>
           <h2 id="a-quienes">A quién acompaña</h2>
           <p>
-            Desde hace años trabaja con hombres y mujeres de las Fuerzas Militares, de la Policía y del
-            INPEC heridos o con discapacidad adquirida, con sus familias y con las familias de quienes
-            fallecieron en cumplimiento del deber.
+            Desde hace años la fundación trabaja con hombres y mujeres de las Fuerzas Militares, de la
+            Policía y del INPEC que resultaron heridos o adquirieron una discapacidad, con sus familias y
+            con las familias de quienes fallecieron en cumplimiento del deber. Ese acompañamiento pasa por
+            los seis programas: deporte, retiro, rehabilitación, orientación jurídica, orientación
+            psicológica y bienestar social.
           </p>
         </div>
         <figure>
@@ -60,8 +70,11 @@ export const Nosotros = () => (
     </section>
     <section className="next-step">
       <div className="wrap">
-        <h2>Seis programas, y un aporte que se acuerda por escrito</h2>
-        <p>El siguiente paso es ver los programas o escribir por WhatsApp.</p>
+        <h2>Seis programas, y un aporte que se acuerda por WhatsApp</h2>
+        <p>
+          Los programas están abiertos. Si quiere aportar tiempo, trabajo o recursos, el acuerdo se hace
+          por WhatsApp. En esta página no hay un pago en línea.
+        </p>
         <div className="hero-actions">
           <Link className="btn btn-blue" to="/nuestros-programas">
             Ver programas

@@ -10,7 +10,10 @@ export const NuestrosProgramas = () => (
       <div className="page-banner-scrim" />
       <div className="wrap page-banner-copy">
         <h1>Seis programas</h1>
-        <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+        <p>
+          Patrocinio deportivo, retiro, rehabilitación, orientación jurídica, orientación psicológica y
+          bienestar social. Cada uno se pide por WhatsApp.
+        </p>
       </div>
     </header>
     {programs.map((program, index) => {
