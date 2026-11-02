@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { ShotImg } from "../../components/Shot"
 import { shots } from "../../content"
 
@@ -8,9 +9,15 @@ export const Nosotros = () => (
         <div>
           <h1>Quiénes somos</h1>
           <p>Entidad privada, sin ánimo de lucro, con personería jurídica.</p>
+          <nav className="jump" aria-label="En esta página">
+            <a href="#mision">Misión</a>
+            <a href="#vision">Visión</a>
+            <a href="#a-quienes">A quién acompaña</a>
+          </nav>
         </div>
         <figure>
           <ShotImg shot={shots.bandera} priority />
+          <figcaption>{shots.bandera.label}</figcaption>
         </figure>
       </div>
     </header>
@@ -27,10 +34,11 @@ export const Nosotros = () => (
         </div>
         <figure>
           <ShotImg shot={shots.familia} />
+          <figcaption>{shots.familia.label}</figcaption>
         </figure>
       </div>
     </section>
-    <section className="prose">
+    <section className="prose band">
       <div className="wrap split flip">
         <div>
           <h2 id="vision">Visión</h2>
@@ -42,6 +50,7 @@ export const Nosotros = () => (
         </div>
         <figure>
           <ShotImg shot={shots.jamundi} />
+          <figcaption>{shots.jamundi.label}</figcaption>
         </figure>
       </div>
     </section>
@@ -57,7 +66,22 @@ export const Nosotros = () => (
         </div>
         <figure>
           <ShotImg shot={shots.sillaPolicia} />
+          <figcaption>{shots.sillaPolicia.label}</figcaption>
         </figure>
+      </div>
+    </section>
+    <section className="next-step">
+      <div className="wrap">
+        <h2>Seis programas, y un aporte que se acuerda por escrito</h2>
+        <p>El siguiente paso es ver los programas o escribir por WhatsApp.</p>
+        <div className="hero-actions">
+          <Link className="btn btn-blue" to="/nuestros-programas">
+            Ver programas
+          </Link>
+          <Link className="btn btn-red" to="/donaciones#escribir">
+            Donar
+          </Link>
+        </div>
       </div>
     </section>
   </>

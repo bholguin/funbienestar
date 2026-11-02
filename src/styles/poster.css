@@ -287,13 +287,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .help p { margin: 10px 0 16px; }
 .help .btn { color: white; }
 
-.album { columns: 2; column-gap: 14px; }
+.album { columns: 2; column-gap: 14px; margin-top: 18px; }
 .album figure { break-inside: avoid; margin: 0 0 14px; }
 .album img { width: 100%; height: auto; border-radius: 10px; }
 .album figcaption { margin-top: 6px; font-size: 0.95rem; color: var(--navy); }
 
-.page-head { padding: 28px 0 8px; }
-.page-head-grid { display: grid; gap: 20px; align-items: center; }
+.page-head { padding: 40px 0 20px; }
+.page-head-grid { display: grid; gap: 28px; align-items: center; }
 .page-head h1 {
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.08;
@@ -303,45 +303,52 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .page-head p { margin-top: 10px; max-width: 40ch; font-size: 1.1rem; }
 .page-head img { width: 100%; height: auto; border-radius: 12px; }
+.split figcaption, .sheet figcaption, .page-head figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--navy); }
 
-.prose { padding: 36px 0; }
-.prose + .prose { padding-top: 0; }
-.split {
-  display: grid;
-  gap: 18px;
+.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.jump a {
+  display: inline-flex;
   align-items: center;
-}
-.split img { width: 100%; height: auto; border-radius: 12px; }
-.split h2 { font-size: clamp(1.7rem, 2.6vw, 2.3rem); }
-.split p { margin-top: 12px; font-size: 1.08rem; }
-
-.sheet {
-  display: grid;
-  gap: 16px;
-  padding: 28px 0;
-  border-top: 0;
-}
-.sheet + .sheet { border-top: 8px solid var(--mist); }
-.sheet img { width: 100%; height: auto; border-radius: 12px; }
-.sheet h2 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
-.sheet p { margin-top: 10px; max-width: 62ch; }
-.terms { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 14px; font-weight: 700; color: var(--blue-deep); }
-
-.motivos { display: grid; gap: 12px; }
-.motivos a {
-  display: flex;
-  align-items: flex-end;
-  min-height: 120px;
-  padding: 18px;
-  border-radius: 12px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
   background: var(--mist);
   color: var(--navy);
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.25;
 }
-.motivos a:hover, .motivos a:focus-visible { background: var(--navy); color: white; }
+.jump a:hover, .jump a:focus-visible { background: var(--navy); color: white; }
+
+.prose { padding: 56px 0; }
+.band { background: var(--mist); }
+.split {
+  display: grid;
+  gap: 22px;
+  align-items: center;
+}
+.split img { width: 100%; height: auto; border-radius: 12px; }
+.split h2, .sheet h2, .next-step h2 { font-size: clamp(1.7rem, 2.6vw, 2.3rem); color: var(--navy); }
+.split p { margin-top: 12px; font-size: 1.08rem; }
+
+.sheet {
+  display: grid;
+  gap: 22px;
+  padding: 56px 0;
+  align-items: center;
+}
+.sheet img { width: 100%; height: auto; border-radius: 12px; }
+.sheet p { margin-top: 12px; max-width: 62ch; }
+.sheet .btn { margin-top: 18px; }
+.terms { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 16px; font-weight: 700; color: var(--blue-deep); }
+
+.next-step { background: var(--navy); color: white; padding: 48px 0; }
+.next-step h2, .next-step p { color: white; }
+.next-step p { margin-top: 10px; max-width: 36em; font-size: 1.1rem; }
+
+.motivos { display: grid; gap: 16px; margin-top: 22px; }
+.motivos li { background: white; border-radius: 12px; padding: 22px 18px 20px; }
+.motivos h3 { font-size: 1.35rem; line-height: 1.25; color: var(--navy); }
+.motivos p { margin: 10px 0 16px; }
 
 .site-footer { background: var(--navy); color: white; padding: 40px 0 24px; }
 .site-footer a { color: white; text-decoration: none; }
@@ -374,7 +381,9 @@ h2[id], article[id], section[id] { scroll-margin-top: 88px; }
   .split { grid-template-columns: 1.05fr 0.95fr; gap: 36px; }
   .split.flip { grid-template-columns: 0.95fr 1.05fr; }
   .split.flip figure { order: 2; }
-  .sheet { grid-template-columns: 1.05fr 0.95fr; gap: 32px; align-items: center; }
+  .sheet { grid-template-columns: 1.05fr 0.95fr; gap: 36px; }
+  .sheet-flip { grid-template-columns: 0.95fr 1.05fr; }
+  .sheet-flip figure { order: 2; }
   .motivos { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1.3fr 0.7fr 0.8fr; }
 }

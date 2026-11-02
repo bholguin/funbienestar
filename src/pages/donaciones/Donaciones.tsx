@@ -14,10 +14,11 @@ export const Donaciones = () => (
         </div>
         <figure>
           <ShotImg shot={shots.bonoComedor} priority />
+          <figcaption>{shots.bonoComedor.label}</figcaption>
         </figure>
       </div>
     </header>
-    <section className="prose" id="escribir" aria-labelledby="como-aportar">
+    <section className="prose" aria-labelledby="como-aportar">
       <div className="wrap split">
         <div>
           <h2 id="como-aportar">Cómo aportar</h2>
@@ -30,16 +31,21 @@ export const Donaciones = () => (
         </div>
         <figure>
           <ShotImg shot={shots.bonoPendón} />
+          <figcaption>{shots.bonoPendón.label}</figcaption>
         </figure>
       </div>
     </section>
-    <div className="wrap" style={{ paddingBottom: 28 }}>
-      <Motivos />
-    </div>
-    <section className="section mist" aria-labelledby="entregas">
+    <section className="section band" id="escribir" aria-labelledby="motivos">
+      <div className="wrap">
+        <h2 id="motivos">Elija el motivo</h2>
+        <p className="lede">El mensaje sale escrito. Solo falta enviarlo por WhatsApp.</p>
+        <Motivos />
+      </div>
+    </section>
+    <section className="section" aria-labelledby="entregas">
       <div className="wrap">
         <h2 id="entregas">Entregas</h2>
-        <div className="album" style={{ marginTop: 16 }}>
+        <div className="album">
           {entregas.map((shot) => (
             <figure key={shot.src}>
               <ShotImg shot={shot} />
