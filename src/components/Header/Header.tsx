@@ -28,7 +28,10 @@ export const Header = () => {
     <header className="site-header">
       <Link className="wordmark" to="/">
         <img src="/assets/logo-mark.png" alt="" width={2060} height={2200} />
-        <span className="wordmark-name">Funbienestar</span>
+        <span className="wordmark-name">
+          <strong>Funbienestar</strong>
+          <small>Fundación Nacional de Bienestar Social</small>
+        </span>
       </Link>
       <button
         type="button"
@@ -41,17 +44,13 @@ export const Header = () => {
       </button>
       <nav id="menu-principal" className={open ? "nav-tab is-open" : "nav-tab"} aria-label="Secciones">
         {links.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            className={({ isActive }) => (isActive ? "is-active" : undefined)}
-          >
+          <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? "is-active" : undefined)}>
             {link.label}
           </NavLink>
         ))}
       </nav>
       <Link className="header-action" to="/donaciones#escribir">
-        Escribir
+        Donar
       </Link>
     </header>
   )

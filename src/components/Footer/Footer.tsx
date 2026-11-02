@@ -1,40 +1,56 @@
 import { Link } from "react-router-dom"
-import { EMAIL, PDF, PHONE_DISPLAY, PHONE_TEL, wa } from "../../content"
+import { EMAIL, PDF, PHONE_DISPLAY, PHONE_TEL, programs, wa } from "../../content"
 
 export const Footer = () => (
   <footer className="site-footer">
-    <div className="footer-top">
+    <div className="wrap footer-grid">
       <div>
-        <h2 className="head">
-          Seguimos
-          <br />
-          en línea
-        </h2>
-        <p className="body" style={{ marginTop: "16px", color: "var(--white)" }}>
+        <h2>Funbienestar</h2>
+        <p>
           Mientras se reubica la oficina física, la fundación sigue prestando sus servicios de manera
           legal y válida por canales virtuales.
         </p>
-        <p style={{ marginTop: "14px" }}>
-          <a className="chunky" href={PDF} target="_blank" rel="noreferrer">
-            Leer el aviso
+        <p>
+          <a href={PDF} target="_blank" rel="noreferrer">
+            Leer el aviso de reubicación
           </a>
         </p>
       </div>
-      <nav className="footer-links" aria-label="Pie">
-        <Link to="/nosotros">Nosotros</Link>
-        <Link to="/nuestros-programas">Programas</Link>
-        <Link to="/donaciones">Donaciones</Link>
-        <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
-        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-        <a href={wa("Hola, Funbienestar. Quiero información.")} target="_blank" rel="noreferrer">
-          WhatsApp
-        </a>
-      </nav>
+      <div>
+        <h2>La fundación</h2>
+        <ul>
+          <li>
+            <Link to="/nosotros">Quiénes somos</Link>
+          </li>
+          <li>
+            <Link to="/nuestros-programas">Programas</Link>
+          </li>
+          <li>
+            <Link to="/donaciones">Donaciones</Link>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li>
+            <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+          </li>
+          <li>
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </li>
+          <li>
+            <a href={wa("Hola, Funbienestar. Quiero información.")} target="_blank" rel="noreferrer">
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div className="footer-legal">
+    <div className="wrap footer-base">
       <span>Fundación Nacional de Bienestar Social</span>
       <span>Colombia</span>
+      <span>{programs.length} programas</span>
     </div>
-    <p className="wordmark-crop">Funbienestar</p>
   </footer>
 )

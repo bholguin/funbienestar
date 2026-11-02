@@ -1,162 +1,186 @@
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { ShotImg } from "../../components/Shot"
-import { aliados, EMAIL, PHONE_DISPLAY, PHONE_TEL, programs, registro, shots, videos } from "../../content"
+import { aliados, motivos, programs, registro, shots, videos, wa } from "../../content"
 
-const rise = (ms: number) => ({ ["--d" as string]: `${ms}ms` })
+const slides = [shots.podio, shots.popayan, shots.familia, shots.medalla]
 
-export const Home = () => (
-  <>
-    <section className="hero" aria-label="Inicio">
-      <div className="hero-field">
-        <div className="hero-copy">
-          <h1 className="display">
-            <span>Apoyo</span> <span>sigue</span>
-          </h1>
-        </div>
-        <figure className="hero-shot">
-          <ShotImg shot={shots.medalla} priority />
-        </figure>
-      </div>
-      <div className="hero-band">
-        <p>Para heridos de la Fuerza Pública y del INPEC, y para sus familias.</p>
-        <Link className="chunky" to="/donaciones#escribir">
-          Escribir
-        </Link>
-      </div>
-    </section>
+export const Home = () => {
+  const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
 
-    <section aria-labelledby="en-video">
-      <div className="band" style={{ background: "var(--ink)", color: "var(--white)" }}>
-        <h2 id="en-video" className="head" data-reveal="">
-          En video
-        </h2>
-      </div>
-      <div className="reels">
-        {videos.map((video) => (
-          <figure className="reel" key={video.src}>
-            <video
-              src={video.src}
-              poster={video.poster}
-              muted
-              loop
-              playsInline
-              autoPlay
-              controls
-              aria-label={video.alt}
-            />
-            <figcaption>{video.label}</figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
+  useEffect(() => {
+    const reduce =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (reduce || paused) return
+    const timer = window.setInterval(() => {
+      setIndex((value) => (value + 1) % slides.length)
+    }, 7000)
+    return () => window.clearInterval(timer)
+  }, [paused])
 
-    <section className="allies" aria-labelledby="aliados">
-      <h2 id="aliados" className="head" data-reveal="">
-        Aliados
-      </h2>
-      <p className="lead" data-reveal="" style={rise(80)}>
-        Policía Nacional, INPEC, Ejército Nacional, CASUR y el Ministerio de Educación.
-      </p>
-      <ul className="crest-board">
-        {aliados.map((ally) => (
-          <li className="crest" key={ally.name}>
-            <img src={ally.src} alt="" width={ally.width} height={ally.height} />
-            <span>{ally.name}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section className="stairs-section" aria-labelledby="la-fundacion">
-      <div>
-        <h2 id="la-fundacion" className="head">
-          La fundación
-        </h2>
-        <p className="stairs">
-          <span>Heridos del servicio,</span>
-          <span>sus familias, y las de</span>
-          <span>quienes murieron en el deber.</span>
-        </p>
-        <p style={{ marginTop: "18px" }}>
-          <Link className="note-link" to="/nosotros">
-            Misión, visión y a quién acompaña
-          </Link>
-        </p>
-      </div>
-      <div className="stair-photos">
-        <ShotImg shot={shots.podio} />
-        <ShotImg shot={shots.popayan} />
-      </div>
-    </section>
-
-    <section aria-labelledby="programas">
-      <div className="band">
-        <h2 id="programas" className="head" data-reveal="">
-          Seis programas
-        </h2>
-      </div>
-      <div className="program-grid">
-        {programs.map((program) => (
-          <Link className="program-tile" key={program.id} to={`/nuestros-programas#${program.id}`}>
-            <ShotImg shot={program.image} />
-            <span>
-              {program.lines[0]} {program.lines[1]}
-            </span>
-          </Link>
-        ))}
-      </div>
-    </section>
-
-    <section aria-labelledby="registro">
-      <div className="band band-split" style={{ background: "var(--ink)", color: "var(--white)" }}>
-        <h2 id="registro" className="head" data-reveal="">
-          El registro
-        </h2>
-        <p className="lead" data-reveal="" style={{ ...rise(70), color: "var(--white)" }}>
-          Entregas, deporte y acompañamiento en las fotos de la fundación.
-        </p>
-      </div>
-      <div className="wall">
-        {registro.map((shot) => (
-          <figure className="print" key={shot.src}>
-            <ShotImg shot={shot} />
-            <figcaption>{shot.label}</figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
-
-    <section aria-labelledby="contacto">
-      <div className="band">
-        <h2 id="contacto" className="head">
-          Contacto
-        </h2>
-      </div>
-      <ContactRows />
-    </section>
-
-    <Link className="escriba" to="/donaciones#escribir">
-      <p>El mensaje sale escrito. Solo falta enviarlo.</p>
-      <svg className="arrow-corner" viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M8 40 L40 8 M18 8 H40 V30" fill="none" stroke="currentColor" strokeWidth="3" />
-      </svg>
-      <span className="giant">Escriba</span>
-    </Link>
-  </>
-)
-
-export function ContactRows() {
   return (
-    <div className="rows">
-      <p className="row">Funbienestar</p>
-      <p className="row">Atención virtual</p>
-      <p className="row">Colombia</p>
-      <a className="row" href={`tel:${PHONE_TEL}`}>
-        {PHONE_DISPLAY}
-      </a>
-      <a className="row row-mail" href={`mailto:${EMAIL}`}>
-        {EMAIL}
-      </a>
-    </div>
+    <>
+      <section className="hero" aria-label="Inicio">
+        {slides.map((shot, shotIndex) => (
+          <div className="hero-slide" key={shot.src} hidden={shotIndex !== index}>
+            <ShotImg shot={shot} priority={shotIndex === 0} />
+          </div>
+        ))}
+        <div className="hero-scrim" />
+        <div className="hero-copy">
+          <h1>
+            Heridos del servicio,
+            <br />
+            y sus familias
+          </h1>
+          <p>Funbienestar acompaña a militares, policías e INPEC.</p>
+          <div className="hero-actions">
+            <Link className="btn btn-blue" to="/nuestros-programas">
+              Ver programas
+            </Link>
+            <Link className="btn btn-red" to="/donaciones#escribir">
+              Donar
+            </Link>
+          </div>
+        </div>
+        <div className="hero-controls">
+          <button type="button" onClick={() => setIndex((value) => (value - 1 + slides.length) % slides.length)} aria-label="Foto anterior">
+            ←
+          </button>
+          {slides.map((shot, shotIndex) => (
+            <button
+              key={shot.src}
+              type="button"
+              aria-label={shot.label}
+              aria-current={shotIndex === index ? "true" : undefined}
+              onClick={() => setIndex(shotIndex)}
+            >
+              {shotIndex + 1}
+            </button>
+          ))}
+          <button type="button" onClick={() => setIndex((value) => (value + 1) % slides.length)} aria-label="Foto siguiente">
+            →
+          </button>
+          <button type="button" onClick={() => setPaused((value) => !value)} aria-pressed={paused}>
+            {paused ? "Seguir" : "Pausa"}
+          </button>
+        </div>
+      </section>
+
+      <div className="panel">
+        <div className="wrap center">
+          <h2>Fundación Nacional de Bienestar Social</h2>
+          <p className="lede">
+            Entidad privada, sin ánimo de lucro, con personería jurídica. Acompaña a heridos del
+            servicio, a sus familias y a las familias de quienes murieron cumpliendo el deber.
+          </p>
+          <figure className="video-frame">
+            <video
+              src={videos[0].src}
+              poster={videos[0].poster}
+              controls
+              playsInline
+              aria-label={videos[0].alt}
+            />
+            <figcaption>{videos[0].label}</figcaption>
+          </figure>
+          <div className="facts">
+            <p className="fact">
+              <strong>6</strong>
+              <span>programas en marcha, del deporte a la orientación</span>
+            </p>
+            <p className="fact">
+              <strong>5</strong>
+              <span>aliados institucionales en Colombia</span>
+            </p>
+            <p className="fact">
+              <strong>WhatsApp</strong>
+              <span>el canal para pedir orientación o donar</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section className="section" aria-labelledby="programas">
+        <div className="wrap">
+          <h2 id="programas">Seis programas</h2>
+          <p className="lede">Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+          <div className="cards">
+            {programs.map((program) => (
+              <Link className="card" key={program.id} to={`/nuestros-programas#${program.id}`}>
+                <ShotImg shot={program.image} />
+                <div>
+                  <h3>
+                    {program.lines[0]} {program.lines[1]}
+                  </h3>
+                  <p>{program.summary}</p>
+                  <em>Leer más</em>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section mist" aria-labelledby="aliados">
+        <div className="wrap">
+          <h2 id="aliados">Aliados</h2>
+          <p className="lede">Policía Nacional, INPEC, Ejército Nacional, CASUR y el Ministerio de Educación.</p>
+          <ul className="crests">
+            {aliados.map((ally) => (
+              <li className="crest" key={ally.name}>
+                <img src={ally.src} alt="" width={ally.width} height={ally.height} />
+                <span>{ally.name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="sumarse">
+        <div className="wrap">
+          <h2 id="sumarse">Cómo sumarse</h2>
+          <p className="lede">El mensaje sale escrito. Solo falta enviarlo por WhatsApp.</p>
+          <div className="help">
+            {motivos.slice(0, 3).map((item) => (
+              <article key={item.id}>
+                <h3>{item.label}</h3>
+                <p>Se abre WhatsApp con este motivo ya escrito.</p>
+                <a className="btn btn-red" href={wa(item.text)} target="_blank" rel="noreferrer">
+                  Escribir
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section mist" aria-labelledby="registro">
+        <div className="wrap">
+          <h2 id="registro">El registro</h2>
+          <p className="lede">Entregas, deporte y acompañamiento en las fotos y el video de la fundación.</p>
+          <figure className="video-frame">
+            <video
+              src={videos[1].src}
+              poster={videos[1].poster}
+              controls
+              playsInline
+              aria-label={videos[1].alt}
+            />
+            <figcaption>{videos[1].label}</figcaption>
+          </figure>
+          <div className="album" style={{ marginTop: 18 }}>
+            {registro.map((shot) => (
+              <figure key={shot.src}>
+                <ShotImg shot={shot} />
+                <figcaption>{shot.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

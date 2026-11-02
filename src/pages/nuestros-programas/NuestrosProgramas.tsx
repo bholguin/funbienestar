@@ -1,24 +1,26 @@
 import { ShotImg } from "../../components/Shot"
-import { programs } from "../../content"
+import { programs, shots } from "../../content"
 
 export const NuestrosProgramas = () => (
   <>
-    <header className="page-shout">
-      <h1 className="display">
-        <span>Seis</span> <span>programas</span>
-      </h1>
-      <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+    <header className="page-hero">
+      <ShotImg shot={shots.medalla} priority />
+      <div className="hero-scrim" />
+      <div className="wrap">
+        <h1>Seis programas</h1>
+        <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+      </div>
     </header>
-    <div className="sheet-stack">
+    <div className="wrap">
       {programs.map((program) => (
         <article className="sheet" id={program.id} key={program.id}>
-          <h2 className="sheet-name">
-            {program.lines[0]} {program.lines[1]}
-          </h2>
           <figure>
             <ShotImg shot={program.image} />
           </figure>
-          <div className="sheet-copy">
+          <div>
+            <h2>
+              {program.lines[0]} {program.lines[1]}
+            </h2>
             <p>{program.body}</p>
             {program.note ? <p>{program.note}</p> : null}
             <ul className="terms">
