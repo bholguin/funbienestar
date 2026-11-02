@@ -78,7 +78,7 @@ export const Rifas = () => {
         <div className="wrap">
           <h2 id="ultimos-resultados">Último resultado</h2>
           <p className="lede">
-            El número de anoche aparece aquí en la mañana, sin que haya que publicarlo. Para cobrar
+            Se actualiza todas las mañanas. Para cobrar
             vale el que figure en el sitio oficial de cada lotería.
           </p>
           {estado === "cargando" ? <p className="rifa-estado">Consultando los últimos resultados.</p> : null}
