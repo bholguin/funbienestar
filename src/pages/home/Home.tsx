@@ -92,7 +92,7 @@ export const Home = () => {
               <span>programas en marcha, del deporte a la orientación</span>
             </p>
             <p className="fact">
-              <strong>5</strong>
+              <strong>{aliados.length}</strong>
               <span>aliados institucionales en Colombia</span>
             </p>
             <p className="fact">
@@ -128,13 +128,17 @@ export const Home = () => {
         <div className="wrap">
           <h2 id="aliados">Aliados</h2>
           <p className="lede">Policía Nacional, INPEC, Ejército Nacional, CASUR y el Ministerio de Educación.</p>
-          <ul className="crests">
-            {aliados.map((ally) => (
-              <li className="crest" key={ally.name}>
-                <img src={ally.src} alt="" width={ally.width} height={ally.height} />
-                <span>{ally.name}</span>
-              </li>
-            ))}
+        </div>
+        <div className="ally-marquee">
+          <ul className="ally-track">
+            {[0, 1].map((copy) =>
+              aliados.map((ally) => (
+                <li className="crest" key={`${ally.name}-${copy}`} aria-hidden={copy === 1 || undefined}>
+                  <img src={ally.src} alt="" width={ally.width} height={ally.height} />
+                  <span>{ally.name}</span>
+                </li>
+              )),
+            )}
           </ul>
         </div>
       </section>

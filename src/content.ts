@@ -231,9 +231,9 @@ export const videos = [
 export const aliados = [
   {
     name: "Policía Nacional",
-    src: "/assets/policia.png",
-    width: 890,
-    height: 600,
+    src: "/assets/policia.jpg",
+    width: 287,
+    height: 278,
   },
   {
     name: "INPEC",
@@ -243,9 +243,9 @@ export const aliados = [
   },
   {
     name: "Ejército Nacional",
-    src: "/assets/ejercito.png",
-    width: 320,
-    height: 320,
+    src: "/assets/ejercito.jpg",
+    width: 468,
+    height: 473,
   },
   {
     name: "CASUR",
