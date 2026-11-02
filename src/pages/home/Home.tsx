@@ -1,71 +1,41 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { ShotImg } from "../../components/Shot"
 import { aliados, motivos, programs, registro, shots, videos, wa } from "../../content"
 
-const slides = [shots.podio, shots.popayan, shots.familia, shots.medalla]
+const fila = [shots.popayan, shots.familia, shots.medalla, shots.colombia]
 
 export const Home = () => {
-  const [index, setIndex] = useState(0)
-  const [paused, setPaused] = useState(false)
-
-  useEffect(() => {
-    const reduce =
-      typeof window.matchMedia === "function" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    if (reduce || paused) return
-    const timer = window.setInterval(() => {
-      setIndex((value) => (value + 1) % slides.length)
-    }, 7000)
-    return () => window.clearInterval(timer)
-  }, [paused])
-
   return (
     <>
-      <section className="hero" aria-label="Inicio">
-        {slides.map((shot, shotIndex) => (
-          <div className="hero-slide" key={shot.src} hidden={shotIndex !== index}>
-            <ShotImg shot={shot} priority={shotIndex === 0} />
-          </div>
-        ))}
-        <div className="hero-scrim" />
-        <div className="hero-copy">
-          <h1>
-            Heridos del servicio,
-            <br />
-            y sus familias
-          </h1>
-          <p>Funbienestar acompaña a militares, policías e INPEC.</p>
-          <div className="hero-actions">
-            <Link className="btn btn-blue" to="/nuestros-programas">
-              Ver programas
-            </Link>
-            <Link className="btn btn-red" to="/donaciones#escribir">
-              Donar
-            </Link>
+      <section className="intro" aria-label="Inicio">
+        <div className="wrap intro-grid">
+          <figure>
+            <ShotImg shot={shots.podio} priority />
+          </figure>
+          <div>
+            <h1>
+              Heridos del servicio,
+              <br />
+              y sus familias
+            </h1>
+            <p>Funbienestar acompaña a militares, policías e INPEC.</p>
+            <div className="hero-actions">
+              <Link className="btn btn-blue" to="/nuestros-programas">
+                Ver programas
+              </Link>
+              <Link className="btn btn-red" to="/donaciones#escribir">
+                Donar
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="hero-controls">
-          <button type="button" onClick={() => setIndex((value) => (value - 1 + slides.length) % slides.length)} aria-label="Foto anterior">
-            ←
-          </button>
-          {slides.map((shot, shotIndex) => (
-            <button
-              key={shot.src}
-              type="button"
-              aria-label={shot.label}
-              aria-current={shotIndex === index ? "true" : undefined}
-              onClick={() => setIndex(shotIndex)}
-            >
-              {shotIndex + 1}
-            </button>
+        <div className="film" aria-label="Otras fotos">
+          {fila.map((shot) => (
+            <figure key={shot.src}>
+              <ShotImg shot={shot} />
+              <figcaption>{shot.label}</figcaption>
+            </figure>
           ))}
-          <button type="button" onClick={() => setIndex((value) => (value + 1) % slides.length)} aria-label="Foto siguiente">
-            →
-          </button>
-          <button type="button" onClick={() => setPaused((value) => !value)} aria-pressed={paused}>
-            {paused ? "Seguir" : "Pausa"}
-          </button>
         </div>
       </section>
 

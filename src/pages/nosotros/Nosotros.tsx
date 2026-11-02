@@ -3,12 +3,15 @@ import { shots } from "../../content"
 
 export const Nosotros = () => (
   <>
-    <header className="page-hero">
-      <ShotImg shot={shots.bandera} priority />
-      <div className="hero-scrim" />
-      <div className="wrap">
-        <h1>Quiénes somos</h1>
-        <p>Entidad privada, sin ánimo de lucro, con personería jurídica.</p>
+    <header className="page-head">
+      <div className="wrap page-head-grid">
+        <div>
+          <h1>Quiénes somos</h1>
+          <p>Entidad privada, sin ánimo de lucro, con personería jurídica.</p>
+        </div>
+        <figure>
+          <ShotImg shot={shots.bandera} priority />
+        </figure>
       </div>
     </header>
     <section className="prose">

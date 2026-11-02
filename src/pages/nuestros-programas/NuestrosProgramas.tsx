@@ -3,12 +3,15 @@ import { programs, shots } from "../../content"
 
 export const NuestrosProgramas = () => (
   <>
-    <header className="page-hero">
-      <ShotImg shot={shots.medalla} priority />
-      <div className="hero-scrim" />
-      <div className="wrap">
-        <h1>Seis programas</h1>
-        <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+    <header className="page-head">
+      <div className="wrap page-head-grid">
+        <div>
+          <h1>Seis programas</h1>
+          <p>Deporte, retiro, rehabilitación, orientación y bienestar social.</p>
+        </div>
+        <figure>
+          <ShotImg shot={shots.medalla} priority />
+        </figure>
       </div>
     </header>
     <div className="wrap">

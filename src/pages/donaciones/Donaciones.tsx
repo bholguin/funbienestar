@@ -6,12 +6,15 @@ const entregas = [shots.bonoCasa, shots.popayan, shots.bonoOficina, shots.recono
 
 export const Donaciones = () => (
   <>
-    <header className="page-hero">
-      <ShotImg shot={shots.bonoComedor} priority />
-      <div className="hero-scrim" />
-      <div className="wrap">
-        <h1>Donar empieza por escribir</h1>
-        <p>El aporte se acuerda por WhatsApp: tiempo, trabajo o recursos.</p>
+    <header className="page-head">
+      <div className="wrap page-head-grid">
+        <div>
+          <h1>Donar empieza por escribir</h1>
+          <p>El aporte se acuerda por WhatsApp: tiempo, trabajo o recursos.</p>
+        </div>
+        <figure>
+          <ShotImg shot={shots.bonoComedor} priority />
+        </figure>
       </div>
     </header>
     <section className="prose" id="escribir" aria-labelledby="como-aportar">
