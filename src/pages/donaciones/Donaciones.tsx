@@ -6,7 +6,7 @@ const entregas = [shots.bonoCasa, shots.popayan, shots.bonoOficina, shots.recono
 
 export const Donaciones = () => (
   <>
-    <header className="page-banner portrait">
+    <header className="page-banner portrait tall">
       <ShotImg shot={shots.bonoComedor} priority />
       <div className="page-banner-scrim" />
       <div className="wrap page-banner-copy">
